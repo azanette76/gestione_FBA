@@ -34,6 +34,8 @@
             <field name="even_start"/>
             <field name="even_stop"/>
             <field name="even_appuntamento_id" attrs="{'invisible':[('even_tipo','!=', 4)]}"/>
+
+            <field name="even_appuntamento_name" string="nome appuntamento"/>
           </group>
         </sheet>
       </form>
@@ -76,11 +78,16 @@
                   date_stop="even_stop"
                   string="Tasks"
                   colors="#32CD32:even_tipo == 1;#f4b642:even_tipo==2;#f4b642:even_tipo==3;"
-                  default_group_by="even_professionista_id">
+                  default_group_by="even_professionista_id"
+                  mode="week"
+                  zoomKey = "ctrlKey"
+                  event_open_popup = "True"
+                  >
           <field name="even_display_interval"/>
           <templates>
             <div t-name="timeline-item">
               <span t-esc="record.even_display_interval"/>
+              <span t-esc="record.even_tipo"/>
             </div>
           </templates>
         </timeline>

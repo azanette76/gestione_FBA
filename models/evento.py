@@ -83,7 +83,7 @@ class Evento(models.Model):
 
     # riferimento all'appuntamento che genera l'evento
     even_appuntamento_id = fields.Many2one('fba.appuntamento', string='Dati appuntamento')
-
+    even_appuntamento_name = fields.Char(related="even_appuntamento_id.name")
     # Campi visibili dell'appuntamento associato all'evento
     even_appuntamento_descrizione = fields.Char(related='even_appuntamento_id.appuntamento_descrizione', readonly=True)
 
