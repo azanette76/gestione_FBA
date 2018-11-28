@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+
+<!--_____________________________________________________________________________FBA.calENDARIO -->
+
+
+  <record model="ir.ui.view" id="calendario_form_view">
+    <field name="name">calendario.form</field>
+    <field name="model">fba.calendario</field>
+    <field name="arch" type="xml">
+      <form string="Form per il calendario">
+        <sheet>
+          <group name = "informazioni principali">
+            <field name="name"/>
+            <field name="cal_tipo"/>
+          </group>
+          <notebook>
+						<page string="Orari" name="Pagina orari">
+							<tree>
+								<field name="cal_calendariofascia_ids" />
+							</tree>
+						</page>
+					</notebook>        
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record model="ir.ui.view" id="calendario_tree">
+    <field name="name">calendario.tree</field>
+    <field name="model">fba.calendario</field>
+    <field name="arch" type="xml">
+      <tree string="Liste calendario">
+        <field name="name"/>
+        <field name="cal_tipo"/>
+      </tree>
+    </field>
+  </record>
+
+  <!-- Fasce di calendario -->
+  
+  <record model="ir.ui.view" id="calendariofasce_form_view">
+    <field name="name">calendariofascia.form</field>
+    <field name="model">fba.calendariofascia</field>
+    <field name="arch" type="xml">
+      <form string="Form per le fasce di calendario">
+        <sheet>
+          <group name = "informazioni principali">
+            <field name="name"/>
+            <field name="calfas_giorno"/>
+            <field name="calfas_from" widget="float_time"/>
+            <field name="calfas_to" widget="float_time"/>
+            <field name="calfas_dataInizio"/>
+            <field name="calfas_dataFine"/>
+          </group>        
+        </sheet>
+      </form>
+    </field>
+  </record>
+  
+  <record model="ir.ui.view" id="calendariofasce_tree">
+    <field name="name">calendariofascia.tree</field>
+    <field name="model">fba.calendariofascia</field>
+    <field name="arch" type="xml">
+      <tree string="Liste calendario">
+        <field name="name"/>
+        <field name="calfas_giorno"/>
+        <field name="calfas_from" widget="float_time"/>
+        <field name="calfas_to" widget="float_time"/>
+        <field name="calfas_dataInizio"/>
+        <field name="calfas_dataFine"/>
+      </tree>
+    </field>
+  </record>
+
+
+  <!--_____________________________________________________________________________FBA.calENDARIOAMBULATORIO -->
+
+
+
+  <record model="ir.ui.view" id="calendarioAmbulatorio_form_view">
+    <field name="name">calendarioAmbulatorio.form</field>
+    <field name="model">fba.calendarioambulatorio</field>
+    <field name="arch" type="xml">
+      <form string="Form calendario per ambulatorio">
+        <sheet>
+          <group name = "informazioni principali">
+            <field name="calambul_calendario_id" options="{'no_create_edit': True}" domain="[('cal_tipo','=','1')]"/>
+            <field name="calambul_dataInizioValidita"/>
+            <field name="calambul_dataFineValidita"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record model="ir.ui.view" id="calendarioAmbulatorio_tree">
+    <field name="name">calendarioAmbulatorio.form</field>
+    <field name="model">fba.calendarioambulatorio</field>
+    <field name="arch" type="xml">
+      <tree string="Lista calendari">
+        <field name="calambul_calendario_id"/>
+        <field name="calambul_dataInizioValidita"/>
+        <field name="calambul_dataFineValidita"/>
+      </tree>
+    </field>
+  </record>
+
+
+<!--_____________________________________________________________________________FBA.calENDARIOPROFESSIONISTA -->
+
+
+
+  <record model="ir.ui.view" id="calendarioProfessionista_form_view">
+    <field name="name">calendarioProfessionista.form</field>
+    <field name="model">fba.calendarioprofessionista</field>
+    <field name="arch" type="xml">
+      <form string="Form calendario per utente">
+        <sheet>
+          <group name = "informazioni principali">
+            <field name="calprofess_calendario_id" options="{'no_create_edit': True}" domain="[('cal_tipo','=','2')]"/>
+            <field name="calprofess_dataInizioValidita"/>
+            <field name="calprofess_dataFineValidita"/>
+          </group>        
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record model="ir.ui.view" id="calendarioProfessionista_tree">
+    <field name="name">calendarioProfessionista.form</field>
+    <field name="model">fba.calendarioprofessionista</field>
+    <field name="arch" type="xml">
+      <tree string="Lista calendari">
+        <field name="calprofess_calendario_id"/>
+        <field name="calprofess_dataInizioValidita"/>
+        <field name="calprofess_dataFineValidita"/>
+      </tree>
+    </field>
+  </record>
+  
+
+</odoo>

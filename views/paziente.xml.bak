@@ -1,0 +1,279 @@
+<?xml version="1.0"?>
+
+<odoo>
+		
+
+		
+
+ 
+
+<!--______________________________________________________________________________FBA.PAZIENTE -->
+
+	<!-- Form -->
+	<record id="view_form_fba_paziente" model="ir.ui.view">
+		<field name="model">fba.paziente</field>
+		<field name="arch" type="xml">
+			<form>
+				<header>		
+				</header>
+				<sheet>
+					<group>
+						<field name="name" string="Cognome e nome"/>
+						<field name="paz_cf" string="Codice Fiscale"/>
+						<field name="paz_bool_nome_con_cf" string="Visualizzare codice fiscale?"/>
+						
+						<field name="paz_gravita_id" string="Gravita" widget="Selection" options="{'no_create': True, 'no_open': True}"/>
+						<field name="paz_azienda_id" string="Azienda sanitaria" widget="Selection" options="{'no_create': True, 'no_open': True}"/>
+						<field name="paz_distretto_id" string="Distretto sanitario" widget="Selection" options="{'no_create': True, 'no_open': True}" domain="[('distr_azienda_id','=',paz_azienda_id)]"/>
+
+					</group>
+					<group>
+						<notebook>
+							<page string="Progetti">
+								<notebook>
+									<page string="Attuali">
+										<field name="paz_progetti_attuali_ids">	
+											<tree>
+												<field name="name" string="Nome"/>
+											</tree>
+										</field>									 	
+									</page>
+									<page string="Bozze">
+										<field name="paz_progetti_bozze_ids">	
+											<tree create="false">
+												<field name="name" string="Nome"/>
+											</tree>
+										</field>	
+									</page>
+									<page string="Archivio">
+										<field name="paz_progetti_archivio_ids">	
+											<tree>
+												<field name="name" string="Nome"/>
+											</tree>
+										</field>	
+									</page>
+								</notebook>
+							</page>
+							<page string="Prestazioni da pianificare">
+								<field name="paz_prestazioni_dafare_ids" string="Nome prestazione">
+									<tree create="false">
+										<field name="prest_anagraficaprestazione_id" string="Nome"/>
+										<field name="prest_n_dapianificare" string="Ancora da pianificare"/>
+									</tree>
+								</field>
+							</page>		
+							<page string="Operatori preferenziali">	
+								<field name="paz_operatoripreferenziali_ids" string="Operatore"/>
+							</page>
+						</notebook>
+					</group>	
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<!-- Tree -->
+	<record id="view_tree_fba_paziente" model="ir.ui.view">
+		<field name="model">fba.paziente</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="paz_rec_name" string="Cognome e nome"/>			
+			</tree>
+		</field>
+	</record>
+
+	<!-- Filter -->
+	<record id="view_filter_fba_paziente" model="ir.ui.view">
+		<field name="model">fba.paziente</field>
+		<field name="arch" type="xml">
+			<search>
+				<field name="name"/>	
+			</search>
+		</field>
+	</record>
+
+
+
+
+<!--_____________________________________________________________________________FBA.GRAVITA -->
+
+<!-- Form -->
+	<record id="view_form_fba_gravita" model="ir.ui.view">
+		<field name="model">fba.gravita</field>
+		<field name="arch" type="xml">
+			<form>
+				<header>			
+				</header>
+				<sheet>
+					<group>
+						<field name="name" string="Classe di gravità"/>	
+						<field name="grav_indice" string="Indice numerico"/>	
+						<field name="grav_pazienti_ids" string="Pazienti attualmente assegnati">
+							<tree create="false">
+								<field name="paz_rec_name" string="Nome"/>
+							</tree>
+						</field>	
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<!-- Tree -->
+	<record id="view_tree_gravita" model="ir.ui.view">
+		<field name="model">fba.gravita</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="name" string="Classe di gravità"/>	
+				<field name="grav_indice_in_stringa" string="Indice numerico"/>				
+			</tree>
+		</field>
+	</record>
+
+	<!-- Filter -->
+	<record id="view_filter_gravita" model="ir.ui.view">
+		<field name="model">fba.gravita</field>
+		<field name="arch" type="xml">
+			<search>
+				<field name="name"/>	
+			</search>
+		</field>
+	</record>
+
+
+
+
+<!--_____________________________________________________________________________FBA.AZIENDA -->
+
+	<!-- Form -->
+	<record id="view_form_fba_azienda" model="ir.ui.view">
+		<field name="model">fba.azienda</field>
+		<field name="arch" type="xml">
+			<form>
+				<header>			
+				</header>
+				<sheet>
+					<group>
+						<field name="name" string="Nome azienda"/>
+						<field name="aziend_distretti_ids" string="Nome distretto"/>
+						<field name="aziend_pazienti_ids" string="Pazienti attualmente assegnati" widget="one2many_list"/>				
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<!-- Tree -->
+	<record id="view_tree_azienda" model="ir.ui.view">
+		<field name="model">fba.azienda</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="name" string="Nome azienda"/>		
+			</tree>
+		</field>
+	</record>
+
+	<!-- Filter -->
+	<record id="view_filter_azienda" model="ir.ui.view">
+		<field name="model">fba.azienda</field>
+		<field name="arch" type="xml">
+			<search>
+				<field name="name"/>	
+			</search>
+		</field>
+	</record>
+
+
+
+
+
+<!--_____________________________________________________________________________FBA.DISTRETTO -->
+
+	<!-- Form -->
+	<record id="view_form_fba_distretto" model="ir.ui.view">
+		<field name="model">fba.distretto</field>
+		<field name="arch" type="xml">
+			<form>
+				<header>			
+				</header>
+				<sheet>
+					<group>
+						<field name="name" string="Nome distretto"/>
+						<field name="distr_pazienti_ids" string="Pazienti attualmente assegnati" widget="one2many_list"/>	
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<!-- Tree -->
+	<record id="view_tree_distretto" model="ir.ui.view">
+		<field name="model">fba.distretto</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="name" string="Nome distretto"/>		
+			</tree>
+		</field>
+	</record>
+
+	<!-- Filter -->
+	<record id="view_filter_distretto" model="ir.ui.view">
+		<field name="model">fba.distretto</field>
+		<field name="arch" type="xml">
+			<search>
+				<field name="name"/>	
+			</search>
+		</field>
+	</record>
+
+
+
+
+
+
+
+<!--_____________________________________________________________________________FBA.OPERATOREPREFERENZIALE -->
+
+	<!-- Form -->
+	<record id="view_form_fba_operatorepreferenziale" model="ir.ui.view">
+		<field name="model">fba.operatorepreferenziale</field>
+		<field name="arch" type="xml">
+			<form>
+				<header>			
+				</header>
+				<sheet>
+					<group>
+						<field name="operpref_anagraficaprestazione_id" string="Prestazione" widget="Selection" options="{'no_create': True, 'no_open': True}"/>
+						<field name="operpref_professionista_id" string="Operatore" widget="Selection" options="{'no_create': True, 'no_open': True}"/>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<!-- Tree -->
+	<record id="view_tree_operatorepreferenziale" model="ir.ui.view">
+		<field name="model">fba.operatorepreferenziale</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="operpref_anagraficaprestazione_id" string="Prestazione"/>
+				<field name="operpref_professionista_id" string="Operatore"/>	
+			</tree>
+		</field>
+	</record>
+
+	<!-- Filter -->
+	<record id="view_filter_operatorepreferenziale" model="ir.ui.view">
+		<field name="model">fba.operatorepreferenziale</field>
+		<field name="arch" type="xml">
+			<search>
+				<field name="operpref_professionista_id" string="Operatore"/>	
+			</search>
+		</field>
+	</record>
+
+
+
+
+
+</odoo>

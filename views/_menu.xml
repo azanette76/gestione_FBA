@@ -1,0 +1,220 @@
+﻿<?xml version="1.0"?>
+
+<odoo>
+
+
+	<!-- MenùS -->
+
+	<act_window id="action_FBA_progetti" name="Progetti" res_model="fba.progetto" view_mode="tree,form"/> <!-- context="{'group_by':'prog_paziente_id'}" -->
+	<menuitem id="menu_FBA_progetti" name="Progetti" action="action_FBA_progetti" groups="hr.group_hr_manager" sequence="-1"/>
+	<record id="menu_FBA_progetti" model="ir.ui.menu"><field name="web_icon_data" type="base64" file="gestione_fba/static/icons/progetti.png"/></record>
+
+
+	<menuitem id="menu_FBA_top_pazienti" name="PAZIENTI" groups="hr.group_hr_manager" sequence="1"/>
+	<record id="menu_FBA_top_pazienti" model="ir.ui.menu"><field name="web_icon_data" type="base64" file="gestione_fba/static/icons/pazienti.png"/></record>
+
+		<act_window id="action_FBA_pazienti" name="ELENCO PAZIENTI" res_model="fba.paziente" view_mode="kanban,tree,form" />
+		<menuitem id="menu_FBA_pazienti" name="ELENCO PAZIENTI" action="action_FBA_pazienti" parent="menu_FBA_top_pazienti" groups="hr.group_hr_manager" sequence="1"/>
+
+		<act_window id="action_FBA_gravita" name="INDICI GRAVITÀ" res_model="fba.gravita" view_mode="tree,form" />
+		<menuitem id="menu_FBA_gravita" name="INDICI GRAVITÀ" action="action_FBA_gravita" parent="menu_FBA_top_pazienti" groups="hr.group_hr_manager" sequence="2"/>
+
+
+	<menuitem id="menu_FBA_top_professionista" name="PERSONALE" groups="hr.group_hr_manager" sequence="2"/>
+	<record id="menu_FBA_top_professionista" model="ir.ui.menu"><field name="web_icon_data" type="base64" file="gestione_fba/static/icons/personale.png"/></record>
+
+		<act_window id="action_FBA_professionista" name="PERSONALE" res_model="fba.professionista" view_mode="kanban,tree,form" />
+		<menuitem id="menu_FBA_professionista" name="PERSONALE" action="action_FBA_professionista" parent="menu_FBA_top_professionista" groups="hr.group_hr_manager" sequence="2"/>
+
+		<act_window id="action_FBA_competenza" name="INDICI COMPETENZA" res_model="fba.competenza" view_mode="tree,form" />
+		<menuitem id="menu_FBA_competenza" name="INDICI COMPETENZA" action="action_FBA_competenza" parent="menu_FBA_top_professionista" groups="hr.group_hr_manager" sequence="2"/>
+
+
+	<act_window id="action_FBA_aziende" name="AZIENDE SANITARIE" res_model="fba.azienda" view_mode="tree,form" />
+	<menuitem id="menu_FBA_aziende" name="AZIENDE SANITARIE" action="action_FBA_aziende" groups="hr.group_hr_manager" sequence="3"/>
+	<record id="menu_FBA_aziende" model="ir.ui.menu"><field name="web_icon_data" type="base64" file="gestione_fba/static/icons/aziende.png"/></record>
+
+
+
+	<act_window id="action_FBA_servizi" name="PRESTAZIONI OFFRIBILI" res_model="fba.servizio" view_mode="tree,form" />
+	<menuitem id="menu_FBA_servizi" name="PRESTAZIONI OFFRIBILI" action="action_FBA_servizi" groups="hr.group_hr_manager" sequence="4"/>
+	<record id="menu_FBA_servizi" model="ir.ui.menu"><field name="web_icon_data" type="base64" file="gestione_fba/static/icons/prestazioni.png"/></record>
+
+
+	<act_window id="action_FBA_sedi" name="SEDI" res_model="fba.sede" view_mode="tree,form" />
+	<menuitem id="menu_FBA_sedi" name="SEDI" action="action_FBA_sedi" groups="hr.group_hr_manager" sequence="5"/>
+	<record id="menu_FBA_sedi" model="ir.ui.menu"><field name="web_icon_data" type="base64" file="gestione_fba/static/icons/sedi.png"/></record>
+
+
+
+	<menuitem id="menu_FBA_calendari_gest" name="CALENDARI" groups="hr.group_hr_manager" sequence="3"/>
+	<record id="menu_FBA_calendari_gest" model="ir.ui.menu"><field name="web_icon_data" type="base64" file="gestione_fba/static/icons/calendari.png"/></record>
+
+		<act_window id="action_FBA_calendari" name="Calendari operatori" res_model="fba.evento" view_type="form" view_mode="timeline,calendar,form"/>
+    		<menuitem id="menu_FBA_calendari" name="Calendari operatori" action="action_FBA_calendari" parent="menu_FBA_calendari_gest" groups="base.group_user" sequence="1"/>
+
+		<act_window id="action_FBA_calendario_def" name="Definizione calendari" res_model="fba.calendario" view_mode="tree,form" />
+		<menuitem id="menu_FBA_calendario_def" name="Definizione calendari" action="action_FBA_calendario_def" parent="menu_FBA_calendari_gest" groups="hr.group_hr_manager" sequence="2"/>
+
+		<act_window id="action_FBA_calendariambulatori" name="Calendari ambulatori" res_model="fba.eventoambulatorio" view_type="form" view_mode="timeline,calendar,form"/>
+        	<menuitem id="menu_FBA_calendariambulatori" name="Calendari ambulatori" action="action_FBA_calendariambulatori" parent="menu_FBA_calendari_gest" groups="base.group_user" sequence="4"/>
+	
+		<act_window id="action_FBA_prestazione" name="Prestazioni in planning" res_model="fba.prestazione" view_mode="tree,form" />
+		<menuitem id="menu_FBA_prestazione" name="Prestazione in planning" action="action_FBA_prestazione" parent="menu_FBA_calendari_gest" groups="hr.group_hr_manager" sequence="5"/>
+
+		<act_window id="action_FBA_appuntamento" name="Appuntamenti" res_model="fba.appuntamento" view_mode="calendar,tree,form" />
+    		<menuitem id="menu_FBA_appuntamento" name="Appuntamenti" action="action_FBA_appuntamento" parent="menu_FBA_calendari_gest" groups="base.group_user" sequence="6"/>
+	
+
+			
+	<menuitem id="top_menu_test" name="Test" groups="hr.group_hr_manager"/>
+	<record id="top_menu_test" model="ir.ui.menu"><field name="web_icon_data" type="base64" file="gestione_fba/static/icons/test.png"/></record>
+
+		<act_window id="action_FBA_distretti" name="Distretti sanitari" res_model="fba.distretto" view_mode="tree,form" />
+		<menuitem id="menu_FBA_distretti" name="Distretti sanitari" action="action_FBA_distretti" parent="top_menu_test" groups="hr.group_hr_manager" sequence="3"/>
+
+		<act_window id="action_FBA_ambulatori" name="Ambulatori" res_model="fba.ambulatorio" view_mode="tree,form" />
+		<menuitem id="menu_FBA_ambulatori" name="Ambulatori" action="action_FBA_ambulatori" parent="top_menu_test" groups="hr.group_hr_manager" sequence="4"/>
+
+		<act_window id="action_FBA_operatorepreferenziale" name="Operatori preferenziali" res_model="fba.operatorepreferenziale" view_mode="tree,form" />
+		<menuitem id="menu_FBA_operatorepreferenziale" name="Operatori preferenziali" action="action_FBA_operatorepreferenziale" parent="top_menu_test" groups="hr.group_hr_manager" sequence="7"/>
+
+		<act_window id="action_FBA_anagraficaprestazioni" name="Anagrafica prestazioni" res_model="fba.anagraficaprestazione" view_mode="tree,form" />
+		<menuitem id="menu_FBA_anagraficaprestazioni" name="Anagrafica prestazioni" action="action_FBA_anagraficaprestazioni" parent="top_menu_test" groups="hr.group_hr_manager" sequence="3"/>
+
+
+
+
+	<!--/////////////////////////////////////////////////////////////////////////////////////////////////////////// NESCONDI HR -->
+
+	<record model="ir.ui.menu" id="hr.menu_hr_main">
+		<field name="action" eval="False"/>
+	</record>	
+
+	<record model="ir.ui.menu" id="hr.menu_hr_main">
+		<field name="action" eval="False"/>
+	</record>	
+
+	<record model="ir.ui.menu" id="hr.menu_hr_reporting_timesheet">
+		<field name="action" eval="False"/>
+	</record>
+
+	<record model="ir.ui.menu" id="hr.menu_human_resources_configuration">
+		<field name="action" eval="False"/>
+	</record>
+
+	<record model="ir.ui.menu" id="hr.menu_open_view_employee_list_my">
+		<field name="action" eval="False"/>
+	</record>
+
+	<record model="ir.ui.menu" id="hr.menu_view_employee_category_form">
+		<field name="action" eval="False"/>
+	</record>
+
+	<record model="ir.ui.menu" id="hr.menu_hr_department_tree">
+		<field name="action" eval="False"/>
+	</record>
+
+	<record model="ir.ui.menu" id="hr.hr_menu_configuration">
+		<field name="action" eval="False"/>
+	</record>
+
+
+
+<!--/////////////////////////////////////////////////////////////////////////////////////////////////////////// NESCONDI MAIL -->
+
+	<record model="ir.ui.menu" id="mail.mail_channel_menu_root_chat">
+		<field name="action" eval="False"/>
+	</record>
+	<record model="ir.ui.menu" id="mail.menu_mail_activity_type">
+		<field name="action" eval="False"/>
+	</record>
+	<record model="ir.ui.menu" id="mail.mail_alias_menu">
+		<field name="action" eval="False"/>
+	</record>
+	<record model="ir.ui.menu" id="mail.mail_channel_partner_menu">
+		<field name="action" eval="False"/>
+	</record>
+	<record model="ir.ui.menu" id="mail.mail_channel_menu_settings">
+		<field name="action" eval="False"/>
+	</record>
+	<record model="ir.ui.menu" id="mail.menu_email_followers">
+		<field name="action" eval="False"/>
+	</record>
+	<record model="ir.ui.menu" id="mail.menu_mail_mail">
+		<field name="action" eval="False"/>
+	</record>
+	<record model="ir.ui.menu" id="mail.menu_message_subtype">
+		<field name="action" eval="False"/>
+	</record>
+	<record model="ir.ui.menu" id="mail.menu_email_templates">
+		<field name="action" eval="False"/>
+	</record>
+	<record model="ir.ui.menu" id="mail.menu_mail_tracking_value">
+		<field name="action" eval="False"/>
+	</record>
+
+
+
+
+<!--/////////////////////////////////////////////////////////////////////////////////////////////////////////// NESCONDI CALENDAR -->
+
+	<record model="ir.ui.menu" id="calendar.mail_menu_calendar">
+		<field name="action" eval="False"/>
+	</record>
+	<record model="ir.ui.menu" id="calendar.menu_calendar_configuration">
+		<field name="action" eval="False"/>
+	</record>
+	<record model="ir.ui.menu" id="calendar.menu_calendar_event_type">
+		<field name="action" eval="False"/>
+	</record>
+	<record model="ir.ui.menu" id="calendar.menu_calendar_alarm">
+		<field name="action" eval="False"/>
+	</record>
+
+
+
+<!--/////////////////////////////////////////////////////////////////////////////////////////////////////////// NESCONDI CONTACTS -->
+
+	<record model="ir.ui.menu" id="contacts.menu_contacts">
+		<field name="action" eval="False"/>
+	</record>
+	<record model="ir.ui.menu" id="contacts.res_partner_menu_contacts">
+		<field name="action" eval="False"/>
+	</record>
+	<record model="ir.ui.menu" id="contacts.res_partner_menu_config">
+		<field name="action" eval="False"/>
+	</record>
+	<record model="ir.ui.menu" id="contacts.menu_partner_category_form">
+		<field name="action" eval="False"/>
+	</record>
+	<record model="ir.ui.menu" id="contacts.menu_partner_title_contact">
+		<field name="action" eval="False"/>
+	</record>
+	<record model="ir.ui.menu" id="contacts.res_partner_industry_menu">
+		<field name="action" eval="False"/>
+	</record>
+	<record model="ir.ui.menu" id="contacts.menu_localisation">
+		<field name="action" eval="False"/>
+	</record>
+	<record model="ir.ui.menu" id="contacts.menu_country_partner">
+		<field name="action" eval="False"/>
+	</record>
+	<record model="ir.ui.menu" id="contacts.menu_country_group">
+		<field name="action" eval="False"/>
+	</record>
+	<record model="ir.ui.menu" id="contacts.menu_country_state_partner">
+		<field name="action" eval="False"/>
+	</record>
+	<record model="ir.ui.menu" id="contacts.menu_config_bank_accounts">
+		<field name="action" eval="False"/>
+	</record>
+	<record model="ir.ui.menu" id="contacts.menu_action_res_bank_form">
+		<field name="action" eval="False"/>
+	</record>
+	<record model="ir.ui.menu" id="contacts.menu_action_res_partner_bank_form">
+		<field name="action" eval="False"/>
+	</record>
+
+
+</odoo>

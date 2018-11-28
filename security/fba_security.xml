@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+    	  <record id="fba_demodata_user_prova1" model="res.users">
+            <field name="name">Prova1</field>
+            <field name="login">prova1</field>
+            <field name="password">prova1</field>
+            <field name="groups_id" eval="[(6,0,[ref('base.group_user')])]"/>
+        </record>      
+    </data>
+ 
+</odoo>
+
+
+
+
+
+
+
+
+     <!--
+
+     	 <record id="gruppo_prova" model="res.groups">
+            <field name="name">Gruppo di prova</field>
+            <field name="users" eval="[(6, 0, [ref('fba_demodata_user_prova1')])]"/>
+        </record>
+
+
+        <record id="regole_di_accesso_di_prova_pazienti" model="ir.model.access">
+            <field name="name">Regole di prova per accesso a tabella pazienti</field>
+            <field name="model_id" ref="model_fba_paziente"/>
+            <field name="group_id" ref="gruppo_prova"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+            <field name="perm_write" eval="True"/>
+        </record>
+    -->

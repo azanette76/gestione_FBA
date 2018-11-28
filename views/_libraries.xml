@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<odoo>
+
+
+	<!-- Stylesheet e JS -->
+	<template id="assets_backend" inherit_id="web.assets_backend"> 
+	     <xpath expr="." position="inside">
+	         <link rel="stylesheet" href="/gestione_FBA/static/css/style.css"/> 
+	         <script type="application/javascript" src="/gestione_FBA/static/js/extra.js"/>
+	     </xpath>        
+	</template>
+
+
+</odoo>

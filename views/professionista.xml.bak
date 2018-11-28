@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+
+<odoo>
+		
+
+	
+
+<!--_____________________________________________________________________________FBA.PROFESSIONISTA -->
+
+	<!-- Form -->
+	<record id="view_form_fba_professionista" model="ir.ui.view">
+		<field name="model">fba.professionista</field>
+		<field name="arch" type="xml">
+			<form>
+				<header>			
+				</header>
+				<sheet>
+					<group>
+						<field name="name" string="Cognome e nome"/>
+						<field name="profess_cf" string="Codice Fiscale"/>
+						<field name="profess_bool_nome_con_cf" string="Visualizzare codice fiscale?"/>
+						<field name="profess_competenza_id" string="Indice di competenza" widget="Selection" options="{'no_create': True, 'no_open': True}"/>
+						
+					</group>
+					<group>
+						<notebook>
+							<page string="Prestazioni da pianificare">
+								<field name="profess_prestazioni_ids" string="Prestazioni" options="{'no_create': True}">
+									<tree create="false">
+										<field name="prest_anagraficaprestazione_id" string="Nome"/>
+										<field name="prest_paziente_id" string="Paziente"/>
+									</tree>
+								</field>
+							</page>
+              <page string="Orario di lavoro" name="Pagina orari">
+                <field name="profess_calendariprofessionista_ids" />
+             	</page>
+						</notebook>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<!-- Tree -->
+	<record id="view_tree_professionista" model="ir.ui.view">
+		<field name="model">fba.professionista</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="profess_rec_name" string="Cognome e nome"/>	
+			</tree>
+		</field>
+	</record>
+
+	<!-- Filter -->
+	<record id="view_filter_professionista" model="ir.ui.view">
+		<field name="model">fba.professionista</field>
+		<field name="arch" type="xml">
+			<search>
+				<field name="name"/>	
+			</search>
+		</field>
+	</record>
+
+
+
+
+
+<!--_____________________________________________________________________________FBA.COMPETENZA -->
+
+<!-- Form -->
+	<record id="view_form_fba_competenza" model="ir.ui.view">
+		<field name="model">fba.competenza</field>
+		<field name="arch" type="xml">
+			<form>
+				<header>			
+				</header>
+				<sheet>
+					<group>
+						<field name="name" string="Classe di competenza"/>	
+						<field name="compet_indice" string="Indice numerico"/>	
+						<field name="compet_professionisti_ids" string="Professionisti attualmente assegnati">
+							<tree create="false">
+								<field name="profess_rec_name" string="Nome"/>
+							</tree>
+						</field>	
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<!-- Tree -->
+	<record id="view_tree_competenza" model="ir.ui.view">
+		<field name="model">fba.competenza</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="name" string="Classe di gravità"/>	
+				<field name="compet_indice_in_stringa" string="Indice numerico"/>				
+			</tree>
+		</field>
+	</record>
+
+	<!-- Filter -->
+	<record id="view_filter_competenza" model="ir.ui.view">
+		<field name="model">fba.competenza</field>
+		<field name="arch" type="xml">
+			<search>
+				<field name="name"/>	
+			</search>
+		</field>
+	</record>
+
+
+
+
+</odoo>

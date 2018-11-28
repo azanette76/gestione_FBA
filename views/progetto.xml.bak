@@ -1,0 +1,270 @@
+<?xml version="1.0"?>
+
+<odoo>
+		
+
+		
+
+
+
+<!--_____________________________________________________________________________FBA.PROGETTO -->
+
+<!-- Form -->
+	<record id="view_form_fba_progetto" model="ir.ui.view">
+		<field name="model">fba.progetto</field>
+		<field name="arch" type="xml">
+			<form>
+				<header>			
+				</header>
+				<sheet>
+					<group>
+						<field name="name" string="Nome progetto"/>
+						<field name="prog_status" string="Stato progetto"/>
+						<field name="prog_codice_prima_autorizzazione" string="Autorizzazione"/>
+						<field name="prog_codice_seconda_autorizzazione" string="Autorizzazione(eventuale seconda)"/>
+					</group>
+					<group>
+						<notebook>
+							<page string="Prestazioni">
+								<field name="prog_prestazioni_ids" string="Prestazioni">
+									<tree>
+										<field name="prest_anagraficaprestazione_id" string="Nome"/>
+										<field name="prest_n_dapianificare" string="Ancora da fare"/>
+										<field name="prest_n_autorizzate" string="N° Autorizzate"/>
+									</tree>
+								</field>
+							</page>
+						</notebook>
+					</group>	
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<!-- Tree -->
+	<record id="view_tree_progetto" model="ir.ui.view">
+		<field name="model">fba.progetto</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="name" string="Nome progetto"/>	
+				<field name="prog_paziente_id" string="Riferito a:"/>			
+			</tree>
+		</field>
+	</record>
+
+	<!-- Filter -->
+	<record id="view_filter_progetto" model="ir.ui.view">
+		<field name="model">fba.progetto</field>
+		<field name="arch" type="xml">
+			<search>
+				<field name="name"/>	
+			</search>
+		</field>
+	</record>
+
+
+
+
+<!--_____________________________________________________________________________FBA.PRESTAZIONE -->
+
+	<!-- Form -->
+	<record id="view_form_fba_prestazione" model="ir.ui.view">
+		<field name="model">fba.prestazione</field>
+		<field name="arch" type="xml">
+			<form>
+				<header>			
+				</header>
+				<sheet>
+					<group>
+						<field name="prest_anagraficaprestazione_id" string="Prestazione" widget="Selection" options="{'no_create': True}"/>
+
+						<field name="prest_durata" string="Durata" readonly="1"/>
+						<field name="prest_interventi" string="N° Interventi" readonly="1"/>
+
+						<field name="prest_descrizione" string="Descrizione"/>
+						<field name="prest_note" string="Note"/>
+
+						<field name="prest_n_appuntamenti" string="N° Appuntamenti"/>
+						<field name="prest_n_autorizzate" string="N° Autorizzate"/>
+						<field name="prest_n_pianificate" string="N° Pianificate" readonly="1"/>
+						<field name="prest_n_dapianificare" string="N° da Pianificare"/>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<!-- Tree -->
+	<record id="view_tree_prestazione" model="ir.ui.view">
+		<field name="model">fba.prestazione</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="prest_anagraficaprestazione_id" string="Nome prestazione"/>	
+				<field name="prest_paziente_id" string="Riferito a:"/>	
+				<field name="prest_progetto_id" string="Del progetto:"/>		
+			</tree>
+		</field>
+	</record>
+
+	<!-- Filter -->
+	<record id="view_filter_prestazione" model="ir.ui.view">
+		<field name="model">fba.prestazione</field>
+		<field name="arch" type="xml">
+			<search>
+				<field name="prest_anagraficaprestazione_id"/>	
+			</search>
+		</field>
+	</record>
+
+
+
+
+
+
+<!--_____________________________________________________________________________FBA.AMBITO -->
+
+	<!-- Form -->
+	<record id="view_form_fba_ambito" model="ir.ui.view">
+		<field name="model">fba.ambito</field>
+		<field name="arch" type="xml">
+			<form>
+				<header>			
+				</header>
+				<sheet>
+					<group>
+						<field name="name" string="Nome ambito"/>
+					</group>
+					<group>
+						<notebook>
+								<page string="Servizi">
+									<field name="ambit_servizi_ids" string="Nome"/>
+								</page>
+						</notebook>		
+					</group>			
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<!-- Tree -->
+	<record id="view_tree_ambito" model="ir.ui.view">
+		<field name="model">fba.ambito</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="name" string="Nome ambito"/>		
+			</tree>
+		</field>
+	</record>
+
+	<!-- Filter -->
+	<record id="view_filter_ambito" model="ir.ui.view">
+		<field name="model">fba.ambito</field>
+		<field name="arch" type="xml">
+			<search>
+				<field name="name"/>	
+			</search>
+		</field>
+	</record>
+
+
+
+
+
+
+<!--_____________________________________________________________________________FBA.SERVIZIO -->
+
+	<!-- Form -->
+	<record id="view_form_fba_servizio" model="ir.ui.view">
+		<field name="model">fba.servizio</field>
+		<field name="arch" type="xml">
+			<form>
+				<header>			
+				</header>
+				<sheet>
+					<group>
+						<field name="name" string="Nome servizio"/>
+					</group>
+					<group>
+						<notebook>
+								<page string="Prestazioni">
+									<field name="serv_anagraficaprestazioni_ids" string="Nome"/>
+								</page>
+						</notebook>		
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<!-- Tree -->
+	<record id="view_tree_servizio" model="ir.ui.view">
+		<field name="model">fba.servizio</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="name" string="Nome servizio"/>		
+			</tree>
+		</field>
+	</record>
+
+	<!-- Filter -->
+	<record id="view_filter_servizio" model="ir.ui.view">
+		<field name="model">fba.servizio</field>
+		<field name="arch" type="xml">
+			<search>
+				<field name="name"/>	
+			</search>
+		</field>
+	</record>
+
+
+
+
+
+<!--_____________________________________________________________________________FBA.anaGRAFICAPRESTAZIONE -->
+
+	<!-- Form -->
+	<record id="view_form_fba_anagraficaprestazione" model="ir.ui.view">
+		<field name="model">fba.anagraficaprestazione</field>
+		<field name="arch" type="xml">
+			<form>
+				<header>			
+				</header>
+				<sheet>
+					<group>
+						<field name="name" string="Nome prestazione"/>
+
+						<field name="anaprest_durata" string="Durata prestazione" widget=""/>
+						<field name="anaprest_interventi" string="Numero interventi"/>
+
+						<field name="anaprest_n_professionisti" string="Numero professionisti richiesti"/>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<!-- Tree -->
+	<record id="view_tree_anagraficaprestazione" model="ir.ui.view">
+		<field name="model">fba.anagraficaprestazione</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="name" string="Nome prestazione"/>	
+			</tree>
+		</field>
+	</record>
+
+	<!-- Filter -->
+	<record id="view_filter_anagraficaprestazione" model="ir.ui.view">
+		<field name="model">fba.anagraficaprestazione</field>
+		<field name="arch" type="xml">
+			<search>
+				<field name="name"/>	
+			</search>
+		</field>
+	</record>
+
+
+
+
+
+</odoo>

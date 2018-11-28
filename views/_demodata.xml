@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+
+
+
+ <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////GRAVITA//////////////////////////////// -->
+
+        <record id="fba_demodata_gravita_TRANQ" model="fba.gravita">
+            <field name="name">TRANQUILLO</field>
+            <field name="grav_indice">1</field>
+        </record>
+
+        <record id="fba_demodata_gravita_MEDIO" model="fba.gravita">
+            <field name="name">MEDIO</field>
+            <field name="grav_indice">5</field>
+        </record>
+
+        <record id="fba_demodata_gravita_GRAVE" model="fba.gravita">
+            <field name="name">GRAVE</field>
+            <field name="grav_indice">10</field>
+        </record>
+
+
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////COMPETENZA//////////////////////////////// -->
+
+        <record id="fba_demodata_competenza_NOV" model="fba.competenza">
+            <field name="name">NOVIZIO</field>
+            <field name="compet_indice">2</field>
+        </record>
+
+        <record id="fba_demodata_competenza_ADE" model="fba.competenza">
+            <field name="name">ADEPTO</field>
+            <field name="compet_indice">6</field>
+        </record>
+
+        <record id="fba_demodata_competenza_ESP" model="fba.competenza">
+            <field name="name">ESPERTO</field>
+            <field name="compet_indice">10</field>
+        </record>
+
+
+
+
+
+ <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////AZIENDE//////////////////////////////// -->
+
+        <record id="fba_demodata_azienda_ASUITS" model="fba.azienda">
+            <field name="name">ASUITS</field>
+        </record>
+        <record id="fba_demodata_azienda_AAS2" model="fba.azienda">
+            <field name="name">AAS2</field>
+        </record>
+        <record id="fba_demodata_azienda_ASUIUD" model="fba.azienda">
+            <field name="name">ASUIUD</field>
+        </record>
+        <record id="fba_demodata_azienda_AAS5" model="fba.azienda">
+            <field name="name">AAS5</field>
+        </record>
+
+
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////DISTRETTI//////////////////////////////// -->
+
+        <record id="fba_demodata_distretto_ASUITS_1" model="fba.distretto">
+            <field name="name">Distretto 1</field>
+            <field name="distr_azienda_id" ref="fba_demodata_azienda_ASUITS"/>
+        </record>
+        <record id="fba_demodata_distretto_ASUITS_2" model="fba.distretto">
+            <field name="name">Distretto 2</field>
+            <field name="distr_azienda_id" ref="fba_demodata_azienda_ASUITS"/>
+        </record>
+        <record id="fba_demodata_distretto_ASUITS_3" model="fba.distretto">
+            <field name="name">Distretto 3</field>
+            <field name="distr_azienda_id" ref="fba_demodata_azienda_ASUITS"/>
+        </record>
+        <record id="fba_demodata_distretto_ASUITS_4" model="fba.distretto">
+            <field name="name">Distretto 4</field>
+            <field name="distr_azienda_id" ref="fba_demodata_azienda_ASUITS"/>
+        </record>
+
+        <record id="fba_demodata_distretto_AAS2_OVEST" model="fba.distretto">
+            <field name="name">OVEST</field>
+            <field name="distr_azienda_id" ref="fba_demodata_azienda_AAS2"/>
+        </record>
+        <record id="fba_demodata_distretto_AAS2_EST" model="fba.distretto">
+            <field name="name">EST</field>
+            <field name="distr_azienda_id" ref="fba_demodata_azienda_AAS2"/>
+        </record>
+        <record id="fba_demodata_distretto_AAS2_BI" model="fba.distretto">
+            <field name="name">BASSO ISONTINO</field>
+            <field name="distr_azienda_id" ref="fba_demodata_azienda_AAS2"/>
+        </record>
+
+        <record id="fba_demodata_distretto_ASUIUD_UDINE" model="fba.distretto">
+            <field name="name">UDINE</field>
+            <field name="distr_azienda_id" ref="fba_demodata_azienda_ASUIUD"/>
+        </record>
+        <record id="fba_demodata_distretto_ASUIUD_TARCENTO" model="fba.distretto">
+            <field name="name">TARCENTO</field>
+            <field name="distr_azienda_id" ref="fba_demodata_azienda_ASUIUD"/>
+        </record>
+
+        <record id="fba_demodata_distretto_AAS5_URBANO" model="fba.distretto">
+            <field name="name">URBANO</field>
+            <field name="distr_azienda_id" ref="fba_demodata_azienda_AAS5"/>
+        </record>
+        <record id="fba_demodata_distretto_AAS5_NORD" model="fba.distretto">
+            <field name="name">NORD</field>
+            <field name="distr_azienda_id" ref="fba_demodata_azienda_AAS5"/>
+        </record>
+        <record id="fba_demodata_distretto_AAS5_SUD" model="fba.distretto">
+            <field name="name">SUD</field>
+            <field name="distr_azienda_id" ref="fba_demodata_azienda_AAS5"/>
+        </record>
+        <record id="fba_demodata_distretto_AAS5_OVEST" model="fba.distretto">
+            <field name="name">OVEST</field>
+            <field name="distr_azienda_id" ref="fba_demodata_azienda_AAS5"/>
+        </record>
+        <record id="fba_demodata_distretto_AAS5_EST" model="fba.distretto">
+            <field name="name">EST</field>
+            <field name="distr_azienda_id" ref="fba_demodata_azienda_AAS5"/>
+        </record>
+
+
+
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////SEDI//////////////////////////////// -->
+
+        <record id="fba_demodata_sede_VESPUCCI" model="fba.sede">
+            <field name="name">VESPUCCI</field>
+        </record>
+        <record id="fba_demodata_sede_VILLA" model="fba.sede">
+            <field name="name">VILLA</field>
+        </record>
+        <record id="fba_demodata_sede_OFFICINA" model="fba.sede">
+            <field name="name">OFFICINA</field>
+        </record>
+
+
+
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////AMBULATORI//////////////////////////////// -->
+
+        <record id="fba_demodata_ambulatorio_VESPUCCI_1" model="fba.ambulatorio">
+            <field name="name">Ambulatorio 1</field>
+            <field name="ambu_sede_id" ref="fba_demodata_sede_VESPUCCI"/>
+        </record>
+        <record id="fba_demodata_ambulatorio_VESPUCCI_2" model="fba.ambulatorio">
+            <field name="name">Ambulatorio 2</field>
+            <field name="ambu_sede_id" ref="fba_demodata_sede_VESPUCCI"/>
+        </record>
+        <record id="fba_demodata_ambulatorio_VESPUCCI_3" model="fba.ambulatorio">
+            <field name="name">Ambulatorio 3</field>
+            <field name="ambu_sede_id" ref="fba_demodata_sede_VESPUCCI"/>
+        </record>
+        <record id="fba_demodata_ambulatorio_VESPUCCI_4" model="fba.ambulatorio">
+            <field name="name">Ambulatorio 4</field>
+            <field name="ambu_sede_id" ref="fba_demodata_sede_VESPUCCI"/>
+        </record>
+        <record id="fba_demodata_ambulatorio_VESPUCCI_5" model="fba.ambulatorio">
+            <field name="name">Ambulatorio 5</field>
+            <field name="ambu_sede_id" ref="fba_demodata_sede_VESPUCCI"/>
+        </record>
+        <record id="fba_demodata_ambulatorio_VESPUCCI_6" model="fba.ambulatorio">
+            <field name="name">Ambulatorio 6</field>
+            <field name="ambu_sede_id" ref="fba_demodata_sede_VESPUCCI"/>
+        </record>
+        <record id="fba_demodata_ambulatorio_VESPUCCI_AMBMED0" model="fba.ambulatorio">
+            <field name="name">Ambulatorio Medico Piano 0</field>
+            <field name="ambu_sede_id" ref="fba_demodata_sede_VESPUCCI"/>
+        </record>
+        <record id="fba_demodata_ambulatorio_VESPUCCI_AMBMED1" model="fba.ambulatorio">
+            <field name="name">Ambulatorio Medico Piano 1</field>
+            <field name="ambu_sede_id" ref="fba_demodata_sede_VESPUCCI"/>
+        </record>
+
+
+        <record id="fba_demodata_ambulatorio_VILLA_1" model="fba.ambulatorio">
+            <field name="name">Ambulatorio 1</field>
+            <field name="ambu_sede_id" ref="fba_demodata_sede_VILLA"/>
+        </record>
+        <record id="fba_demodata_ambulatorio_VILLA_2" model="fba.ambulatorio">
+            <field name="name">Ambulatorio 2</field>
+            <field name="ambu_sede_id" ref="fba_demodata_sede_VILLA"/>
+        </record>
+        <record id="fba_demodata_ambulatorio_VILLA_3" model="fba.ambulatorio">
+            <field name="name">Ambulatorio 3</field>
+            <field name="ambu_sede_id" ref="fba_demodata_sede_VILLA"/>
+        </record>
+        <record id="fba_demodata_ambulatorio_VILLA_4" model="fba.ambulatorio">
+            <field name="name">Ambulatorio 4</field>
+            <field name="ambu_sede_id" ref="fba_demodata_sede_VILLA"/>
+        </record>
+        <record id="fba_demodata_ambulatorio_VILLA_RESIDENZA" model="fba.ambulatorio">
+            <field name="name">Zona residenziale</field>
+            <field name="ambu_sede_id" ref="fba_demodata_sede_VILLA"/>
+        </record>
+
+
+        <record id="fba_demodata_ambulatorio_OFFICINA_LABORATORIO" model="fba.ambulatorio">
+            <field name="name">Laboratorio</field>
+            <field name="ambu_sede_id" ref="fba_demodata_sede_OFFICINA"/>
+        </record>
+
+
+
+
+
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////SERVIZI//////////////////////////////// -->
+
+        <record id="fba_demodata_servizio_DIAGNOSTICO" model="fba.servizio">
+            <field name="name">DIAGNOSTICO</field>
+        </record>
+        <record id="fba_demodata_servizio_RIAB" model="fba.servizio">
+            <field name="name">RIABILITATIVO</field>
+        </record>
+        <record id="fba_demodata_servizio_RES" model="fba.servizio">
+            <field name="name">RESIDENZIALE</field>
+        </record>
+        <record id="fba_demodata_servizio_SEMIRES" model="fba.servizio">
+            <field name="name">SEMIRESIDENZIALE</field>
+        </record>
+        <record id="fba_demodata_servizio_CONSULENZ" model="fba.servizio">
+            <field name="name">CONSULENZIALE</field>
+        </record>
+        <record id="fba_demodata_servizio_FORMATIVO" model="fba.servizio">
+            <field name="name">FORMATIVO</field>
+        </record>
+
+
+
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////ANAGRAFICA PRESTAZIONI//////////////////////////////// -->
+
+        <record id="fba_demodata_anaprest_ADOS" model="fba.anagraficaprestazione">
+            <field name="name">Test ADOS</field>
+            <field name="anaprest_durata" eval="4"/>
+            <field name="anaprest_interventi" eval="6"/>
+            <field name="anaprest_n_professionisti" eval="2"/>
+            <field name="anaprest_servizio_id" ref="fba_demodata_servizio_DIAGNOSTICO"/>
+            <field name="anaprest_ambulatori_ids" eval="[(6, 0, [ref('fba_demodata_ambulatorio_VESPUCCI_AMBMED0')])]"/>
+        </record>
+        <record id="fba_demodata_anaprest_ADIR" model="fba.anagraficaprestazione">
+            <field name="name">Test ADI-R</field>
+            <field name="anaprest_durata" eval="7"/>
+            <field name="anaprest_interventi" eval="11"/>
+            <field name="anaprest_n_professionisti" eval="2"/>
+            <field name="anaprest_servizio_id" ref="fba_demodata_servizio_DIAGNOSTICO"/>
+             <field name="anaprest_ambulatori_ids" eval="[(6, 0, [ref('fba_demodata_ambulatorio_VESPUCCI_AMBMED0')])]"/>
+        </record>
+        <record id="fba_demodata_anaprest_VALLOGO" model="fba.anagraficaprestazione">
+            <field name="name">VALUTAZIONE LOGEPEDICA</field>
+            <field name="anaprest_durata" eval="4"/>
+            <field name="anaprest_interventi" eval="6"/>
+            <field name="anaprest_n_professionisti" eval="1"/>
+            <field name="anaprest_servizio_id" ref="fba_demodata_servizio_DIAGNOSTICO"/>
+            <field name="anaprest_ambulatori_ids" eval="[(6, 0, [ref('fba_demodata_ambulatorio_VESPUCCI_AMBMED0'), ref('fba_demodata_ambulatorio_VESPUCCI_AMBMED1')])]"/>
+        </record>
+        <record id="fba_demodata_anaprest_VALCOGN" model="fba.anagraficaprestazione">
+            <field name="name">VALUTAZIONE COGNITIVA</field>
+            <field name="anaprest_durata" eval="1"/>
+            <field name="anaprest_interventi" eval="1.5"/>
+            <field name="anaprest_n_professionisti" eval="1"/>
+            <field name="anaprest_servizio_id" ref="fba_demodata_servizio_DIAGNOSTICO"/>
+            <field name="anaprest_ambulatori_ids" eval="[(6, 0, [ref('fba_demodata_ambulatorio_VESPUCCI_AMBMED0'), ref('fba_demodata_ambulatorio_VESPUCCI_AMBMED1')])]"/>
+        </record>
+        <record id="fba_demodata_anaprest_VISITANEURO" model="fba.anagraficaprestazione">
+            <field name="name">VISITA NEUROPSICHIATRICA</field>
+            <field name="anaprest_durata" eval="2"/>
+            <field name="anaprest_interventi" eval="3"/>
+            <field name="anaprest_n_professionisti" eval="1"/>
+            <field name="anaprest_servizio_id" ref="fba_demodata_servizio_DIAGNOSTICO"/>
+            <field name="anaprest_ambulatori_ids" eval="[(6, 0, [ref('fba_demodata_ambulatorio_VESPUCCI_AMBMED1')])]"/>
+        </record>
+        <record id="fba_demodata_anaprest_AM" model="fba.anagraficaprestazione">
+            <field name="name">AMBULATORIALE</field>
+            <field name="anaprest_durata" eval="0.66"/>
+            <field name="anaprest_interventi" eval="1"/>
+            <field name="anaprest_n_professionisti" eval="1"/>
+            <field name="anaprest_servizio_id" ref="fba_demodata_servizio_RIAB"/>
+            <field name="anaprest_ambulatori_ids" eval="[(6, 0, [ref('fba_demodata_ambulatorio_VESPUCCI_1'), ref('fba_demodata_ambulatorio_VESPUCCI_2'), ref('fba_demodata_ambulatorio_VESPUCCI_3'), ref('fba_demodata_ambulatorio_VESPUCCI_4'), ref('fba_demodata_ambulatorio_VESPUCCI_5'), ref('fba_demodata_ambulatorio_VESPUCCI_6'), ref('fba_demodata_ambulatorio_VILLA_1'), ref('fba_demodata_ambulatorio_VILLA_2'), ref('fba_demodata_ambulatorio_VILLA_3'), ref('fba_demodata_ambulatorio_VILLA_4')])]"/>
+        </record>
+        <record id="fba_demodata_anaprest_PT" model="fba.anagraficaprestazione">
+            <field name="name">PARENT TRAINING</field>
+            <field name="anaprest_durata" eval="0.66"/>
+            <field name="anaprest_interventi" eval="1"/>
+            <field name="anaprest_n_professionisti" eval="1"/>
+            <field name="anaprest_servizio_id" ref="fba_demodata_servizio_RIAB"/>
+            <field name="anaprest_ambulatori_ids" eval="[(6, 0, [ref('fba_demodata_ambulatorio_VESPUCCI_AMBMED0')])]"/>
+        </record>
+        <record id="fba_demodata_anaprest_COLLINT" model="fba.anagraficaprestazione">
+            <field name="name">COLLEGIALE INTERNO</field>
+            <field name="anaprest_durata" eval="0.66"/>
+            <field name="anaprest_interventi" eval="1.0"/>
+            <field name="anaprest_n_professionisti" eval="2"/>
+            <field name="anaprest_servizio_id" ref="fba_demodata_servizio_RIAB"/>
+        </record>
+        <record id="fba_demodata_anaprest_COLLEST" model="fba.anagraficaprestazione">
+            <field name="name">COLLEGIALE ESTERNO</field>
+            <field name="anaprest_durata" eval="0.66"/>
+            <field name="anaprest_interventi" eval="1.0"/>
+            <field name="anaprest_n_professionisti" eval="1"/>
+            <field name="anaprest_servizio_id" ref="fba_demodata_servizio_RIAB"/>
+        </record>
+        <record id="fba_demodata_anaprest_VISITANEURO" model="fba.anagraficaprestazione">
+            <field name="name">VISITA NEUROPSICHIATRICA</field>
+            <field name="anaprest_durata" eval="2"/>
+            <field name="anaprest_interventi" eval="3"/>
+            <field name="anaprest_n_professionisti" eval="1"/>
+            <field name="anaprest_servizio_id" ref="fba_demodata_servizio_RIAB"/>
+            <field name="anaprest_ambulatori_ids" eval="[(6, 0, [ref('fba_demodata_ambulatorio_VESPUCCI_AMBMED1')])]"/>
+        </record>
+
+        <record id="fba_demodata_anaprest_8ore" model="fba.anagraficaprestazione">
+            <field name="name">8 ORE</field>
+            <field name="anaprest_durata" eval="8"/>
+            <field name="anaprest_servizio_id" ref="fba_demodata_servizio_SEMIRES"/>
+            <field name="anaprest_ambulatori_ids" eval="[(6, 0, [ref('fba_demodata_ambulatorio_OFFICINA_LABORATORIO')])]"/>
+        </record>
+
+        <record id="fba_demodata_anaprest_16ore" model="fba.anagraficaprestazione">
+            <field name="name">16 ORE</field>
+            <field name="anaprest_durata" eval="16"/>
+            <field name="anaprest_servizio_id" ref="fba_demodata_servizio_RES"/>
+            <field name="anaprest_ambulatori_ids" eval="[(6, 0, [ref('fba_demodata_ambulatorio_VILLA_RESIDENZA')])]"/>
+        </record>
+        <record id="fba_demodata_anaprest_24ore" model="fba.anagraficaprestazione">
+            <field name="name">24 ORE</field>
+            <field name="anaprest_durata" eval="24"/>
+               <field name="anaprest_servizio_id" ref="fba_demodata_servizio_RES"/>
+            <field name="anaprest_ambulatori_ids" eval="[(6, 0, [ref('fba_demodata_ambulatorio_VILLA_RESIDENZA'), ref('fba_demodata_ambulatorio_OFFICINA_LABORATORIO')])]"/>
+        </record>
+
+
+
+
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////PROFESSIONISTI//////////////////////////////// -->
+
+        <record id="fba_demodata_professionista_Milan" model="fba.professionista">
+            <field name="image" type="base64" file="gestione_fba/static/icons-demodata/milan.jpg"/>
+            <field name="name">MILAN ANTONELLA</field>
+            <field name="profess_cf">MLNNNL71C64I403Z</field>
+            <field name="profess_anagraficaprestazioni_ids" eval="[(6, 0, [ref('fba_demodata_anaprest_ADOS'), ref('fba_demodata_anaprest_ADIR'), ref('fba_demodata_anaprest_VALCOGN'), ref('fba_demodata_anaprest_COLLEST')])]"/>
+        </record>
+        <record id="fba_demodata_professionista_Brocca" model="fba.professionista">
+            <field name="image" type="base64" file="gestione_fba/static/icons-demodata/brocca.jpg"/>
+            <field name="name">BROCCA ELISA</field>
+            <field name="profess_cf">BRCLSE80C51E473B</field>
+            <field name="profess_anagraficaprestazioni_ids" eval="[(6, 0, [ref('fba_demodata_anaprest_ADOS'), ref('fba_demodata_anaprest_ADIR'), ref('fba_demodata_anaprest_VALCOGN'), ref('fba_demodata_anaprest_COLLEST'),ref('fba_demodata_anaprest_AM')])]"/>
+        </record>
+        <record id="fba_demodata_professionista_Ateri" model="fba.professionista">
+            <field name="image" type="base64" file="gestione_fba/static/icons-demodata/ateri.jpg"/>
+            <field name="name">ATERI FEDERICA</field>
+            <field name="profess_cf">TRAFRC88S66B300M</field>
+            <field name="profess_anagraficaprestazioni_ids" eval="[(6, 0, [ref('fba_demodata_anaprest_AM')])]"/>
+        </record>
+        <record id="fba_demodata_professionista_Giacuzzo" model="fba.professionista">
+            <field name="image" type="base64" file="gestione_fba/static/icons-demodata/giacuzzo.jpg"/>
+            <field name="name">GIACUZZO VALENTINA</field>
+            <field name="profess_cf">GCZVNT94H42C957O</field>
+            <field name="profess_anagraficaprestazioni_ids" eval="[(6, 0, [ref('fba_demodata_anaprest_AM'), ref('fba_demodata_anaprest_VALLOGO')])]"/>
+        </record>
+        <record id="fba_demodata_professionista_Ceschia" model="fba.professionista">
+            <field name="image" type="base64" file="gestione_fba/static/icons-demodata/ceschia.jpg"/>
+            <field name="name">CESCHIA RACHELE</field>
+            <field name="profess_cf">CSCRHL79D60D962S</field>
+            <field name="profess_anagraficaprestazioni_ids" eval="[(6, 0, [ref('fba_demodata_anaprest_VISITANEURO')])]"/>
+        </record>
+        <record id="fba_demodata_professionista_Cassin" model="fba.professionista">
+            <field name="image" type="base64" file="gestione_fba/static/icons-demodata/cassin.jpg"/>
+            <field name="name">CASSIN ELEONORA</field>
+            <field name="profess_cf">CSSLNR82C64L378M</field>
+            <field name="profess_anagraficaprestazioni_ids" eval="[(6, 0, [ref('fba_demodata_anaprest_AM'), ref('fba_demodata_anaprest_PT'), ref('fba_demodata_anaprest_COLLINT'), ref('fba_demodata_anaprest_COLLEST')])]"/>
+        </record>
+        <record id="fba_demodata_professionista_Sedran" model="fba.professionista">
+            <field name="image" type="base64" file="gestione_fba/static/icons-demodata/sedran.jpg"/>
+            <field name="name">SEDRAN EMANUELA</field>
+            <field name="profess_cf">SDRMNL73S54G888I</field>
+            <field name="profess_anagraficaprestazioni_ids" eval="[(6, 0, [ref('fba_demodata_anaprest_ADOS'), ref('fba_demodata_anaprest_ADIR'), ref('fba_demodata_anaprest_VALCOGN'), ref('fba_demodata_anaprest_COLLEST'), ref('fba_demodata_anaprest_8ore'), ref('fba_demodata_anaprest_16ore'), ref('fba_demodata_anaprest_24ore')])]"/>
+        </record>
+      
+
+
+
+
+
+
+
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////PAZIENTI//////////////////////////////// -->
+
+        <record id="fba_demodata_paziente_PILLOT" model="fba.paziente">
+            <field name="name">PILLOT GABRIELE</field>
+            <field name="paz_cf">PLLGRLOOC16G888N</field>
+            <field name="paz_gravita_id" ref="fba_demodata_gravita_TRANQ"/>
+            <field name="paz_azienda_id" ref="fba_demodata_azienda_AAS5"/>
+            <field name="paz_distretto_id" ref="fba_demodata_distretto_AAS5_URBANO"/>            
+        </record>
+        <record id="fba_demodata_paziente_LONGO" model="fba.paziente">
+            <field name="image" type="base64" file="gestione_fba/static/icons-demodata/longo.jpg"/>
+            <field name="name">LONGO ELIA</field>
+            <field name="paz_cf">LNGLEI02D05G888F</field>
+            <field name="paz_gravita_id" ref="fba_demodata_gravita_GRAVE"/>
+            <field name="paz_azienda_id" ref="fba_demodata_azienda_AAS5"/>
+            <field name="paz_distretto_id" ref="fba_demodata_distretto_AAS5_URBANO"/>            
+        </record>
+        <record id="fba_demodata_paziente_HOXHA" model="fba.paziente">
+            <field name="name">HOXHA ANDREA</field>
+            <field name="paz_cf">HXHNDR04C03G888H</field>
+            <field name="paz_gravita_id" ref="fba_demodata_gravita_MEDIO"/>
+            <field name="paz_azienda_id" ref="fba_demodata_azienda_AAS5"/>
+            <field name="paz_distretto_id" ref="fba_demodata_distretto_AAS5_URBANO"/>            
+        </record>
+        <record id="fba_demodata_paziente_ZUCCHET" model="fba.paziente">
+            <field name="image" type="base64" file="gestione_fba/static/icons-demodata/zucchet.jpg"/>
+            <field name="name">ZUCCHET ENRICO</field>
+            <field name="paz_cf">ZCCNRC92M01G888Q</field>
+            <field name="paz_gravita_id" ref="fba_demodata_gravita_TRANQ"/>
+            <field name="paz_azienda_id" ref="fba_demodata_azienda_AAS5"/>
+            <field name="paz_distretto_id" ref="fba_demodata_distretto_AAS5_SUD"/>            
+        </record>
+        <record id="fba_demodata_paziente_ADNAN" model="fba.paziente">
+            <field name="image" type="base64" file="gestione_fba/static/icons-demodata/ljubovic.jpg"/>
+            <field name="name">LJUBOVIC ADNAN</field>
+            <field name="paz_cf">LJBDNN88C13Z153W</field>
+            <field name="paz_gravita_id" ref="fba_demodata_gravita_MEDIO"/>
+            <field name="paz_azienda_id" ref="fba_demodata_azienda_ASUIUD"/>
+            <field name="paz_distretto_id" ref="fba_demodata_distretto_ASUIUD_UDINE"/>            
+        </record>
+        <record id="fba_demodata_paziente_ROGER" model="fba.paziente">
+            <field name="image" type="base64" file="gestione_fba/static/icons-demodata/roger.jpg"/>
+            <field name="name">MUNOZ SANCHEZ ROGER</field>
+            <field name="paz_cf">MNZRGR89C03Z604K</field>
+            <field name="paz_gravita_id" ref="fba_demodata_gravita_GRAVE"/>
+            <field name="paz_azienda_id" ref="fba_demodata_azienda_ASUIUD"/>
+            <field name="paz_distretto_id" ref="fba_demodata_distretto_ASUIUD_UDINE"/>            
+        </record>
+
+
+
+
+
+
+
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////OPERATORIPREFERENZIALI//////////////////////////////// -->
+
+        <record id="fba_demodata_oppref_Pillot_Brocca_AMB1" model="fba.operatorepreferenziale">
+            <field name="operpref_paziente_id" ref="fba_demodata_paziente_PILLOT"/>
+            <field name="operpref_professionista_id" ref="fba_demodata_professionista_Brocca"/>
+            <field name="operpref_anagraficaprestazione_id" ref="fba_demodata_anaprest_AM"/>
+        </record>
+        <record id="fba_demodata_oppref_Pillot_Cassin_PT" model="fba.operatorepreferenziale">
+            <field name="operpref_paziente_id" ref="fba_demodata_paziente_PILLOT"/>
+            <field name="operpref_professionista_id" ref="fba_demodata_professionista_Cassin"/>
+            <field name="operpref_anagraficaprestazione_id" ref="fba_demodata_anaprest_PT"/>
+        </record>
+        <record id="fba_demodata_oppref_Pillot_Brocca_COLLEST" model="fba.operatorepreferenziale">
+            <field name="operpref_paziente_id" ref="fba_demodata_paziente_PILLOT"/>
+            <field name="operpref_professionista_id" ref="fba_demodata_professionista_Brocca"/>
+            <field name="operpref_anagraficaprestazione_id" ref="fba_demodata_anaprest_COLLEST"/>
+        </record>
+
+
+        <record id="fba_demodata_oppref_Longo_Ateri_AMB1" model="fba.operatorepreferenziale">
+            <field name="operpref_paziente_id" ref="fba_demodata_paziente_LONGO"/>
+            <field name="operpref_professionista_id" ref="fba_demodata_professionista_Ateri"/>
+            <field name="operpref_anagraficaprestazione_id" ref="fba_demodata_anaprest_AM"/>
+        </record>
+        <record id="fba_demodata_oppref_Longo_Cassin_PT" model="fba.operatorepreferenziale">
+            <field name="operpref_paziente_id" ref="fba_demodata_paziente_LONGO"/>
+            <field name="operpref_professionista_id" ref="fba_demodata_professionista_Cassin"/>
+            <field name="operpref_anagraficaprestazione_id" ref="fba_demodata_anaprest_PT"/>
+        </record>
+        <record id="fba_demodata_oppref_Longo_Milan_COLLEST" model="fba.operatorepreferenziale">
+            <field name="operpref_paziente_id" ref="fba_demodata_paziente_LONGO"/>
+            <field name="operpref_professionista_id" ref="fba_demodata_professionista_Milan"/>
+            <field name="operpref_anagraficaprestazione_id" ref="fba_demodata_anaprest_COLLEST"/>
+        </record>
+
+
+        <record id="fba_demodata_oppref_Hoxha_Ateri_AMB1" model="fba.operatorepreferenziale">
+            <field name="operpref_paziente_id" ref="fba_demodata_paziente_HOXHA"/>
+            <field name="operpref_professionista_id" ref="fba_demodata_professionista_Ateri"/>
+            <field name="operpref_anagraficaprestazione_id" ref="fba_demodata_anaprest_AM"/>
+        </record>
+        <record id="fba_demodata_oppref_Hoxha_Cassin_PT" model="fba.operatorepreferenziale">
+            <field name="operpref_paziente_id" ref="fba_demodata_paziente_HOXHA"/>
+            <field name="operpref_professionista_id" ref="fba_demodata_professionista_Cassin"/>
+            <field name="operpref_anagraficaprestazione_id" ref="fba_demodata_anaprest_PT"/>
+        </record>
+        <record id="fba_demodata_oppref_Hoxha_Milan_COLLEST" model="fba.operatorepreferenziale">
+            <field name="operpref_paziente_id" ref="fba_demodata_paziente_HOXHA"/>
+            <field name="operpref_professionista_id" ref="fba_demodata_professionista_Milan"/>
+            <field name="operpref_anagraficaprestazione_id" ref="fba_demodata_anaprest_COLLEST"/>
+        </record>
+
+
+        <record id="fba_demodata_oppref_Zucchet_Giacuzzo_AMB1" model="fba.operatorepreferenziale">
+            <field name="operpref_paziente_id" ref="fba_demodata_paziente_ZUCCHET"/>
+            <field name="operpref_professionista_id" ref="fba_demodata_professionista_Giacuzzo"/>
+            <field name="operpref_anagraficaprestazione_id" ref="fba_demodata_anaprest_AM"/>
+        </record>
+        <record id="fba_demodata_oppref_Zucchet_Cassin_PT" model="fba.operatorepreferenziale">
+            <field name="operpref_paziente_id" ref="fba_demodata_paziente_ZUCCHET"/>
+            <field name="operpref_professionista_id" ref="fba_demodata_professionista_Cassin"/>
+            <field name="operpref_anagraficaprestazione_id" ref="fba_demodata_anaprest_PT"/>
+        </record>
+        <record id="fba_demodata_oppref_Zucchet_Milan_COLLEST" model="fba.operatorepreferenziale">
+            <field name="operpref_paziente_id" ref="fba_demodata_paziente_ZUCCHET"/>
+            <field name="operpref_professionista_id" ref="fba_demodata_professionista_Milan"/>
+            <field name="operpref_anagraficaprestazione_id" ref="fba_demodata_anaprest_COLLEST"/>
+        </record>
+
+
+    </data>
+</odoo>
+
+
+
+
+<!--
+
+  <record id="Carlottolo" model="fba.paziente">
+            <field name="name">Carcarlo Merda</field>
+            <field name="image" type="base64" file="payment_authorize/static/description/icon.png"/>
+            <field name="provider">authorize</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="view_template_id" ref="authorize_acquirer_button"/>
+            <field name="environment">test</field>
+            <field name='authorize_login'>dummy</field>
+            <field name="authorize_transaction_key">dummy</field>
+        </record>
+
+-->

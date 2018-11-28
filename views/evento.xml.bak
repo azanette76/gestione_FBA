@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+
+<!--_____________________________________________________________________________FBA.EVENTO -->
+
+  <report id="fba_eventi" model="fba.evento" string="Eventi" report_type="qweb-pdf" name="fba.report_eventi" file="fba.report_eventi" menu="True" />
+
+  <template id="report_eventi">
+    <t t-call="web.html_container">
+      <t t-foreach="docs" t-as="o">
+        <t t-call="web.external_layout">
+          <div class="page">
+            <h2>Report title</h2>
+            <p>
+              This object's name is <span t-field="o.name"/>
+            </p>
+          </div>
+        </t>
+      </t>
+    </t>
+  </template>
+
+  <!-- Eventi Form -->
+  <record model="ir.ui.view" id="eventi_form_view">
+    <field name="name">eventi.form</field>
+    <field name="model">fba.evento</field>
+    <field name="arch" type="xml">
+      <form string="Eventi form">
+        <sheet>
+          <group>
+            <field name="even_tipo"/>
+            <field name="even_start"/>
+            <field name="even_stop"/>
+            <field name="even_appuntamento_id" attrs="{'invisible':[('even_tipo','!=', 4)]}"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!--Eventi Calendar -->
+  <record id="view_calendar_eventi" model="ir.ui.view">
+    <field name="name">eventi.calendar</field>
+    <field name="model">fba.evento</field>
+    <field name="priority" eval="2"/>
+    <field name="arch" type="xml">
+      <calendar string="Eventi" date_start="even_start" date_stop="even_stop" date_delay="even_duration" all_day="even_allday">
+        <field name="name"/>
+        <field name="even_professionista_id" />
+      </calendar>
+    </field>
+  </record>
+
+  <!--Eventi tree -->
+  <record model="ir.ui.view" id="eventi_tree">
+    <field name="name">eventi.tree</field>
+    <field name="model">fba.evento</field>
+    <field name="arch" type="xml">
+      <tree string="Eventi">
+        <field name="name"/>
+        <field name="even_descrizione"/>
+        <field name="even_tipo"/>
+      </tree>
+    </field>
+  </record>
+
+  <!--Eventi timeline -->
+  <record id="view_timeline_eventi" model="ir.ui.view">
+      <field name="name">eventi.timeline</field>
+      <field name="model">fba.evento</field>
+      <field name="priority" eval="2"/>
+      <field name="arch" type="xml">
+        <timeline date_start="even_start"
+                  date_stop="even_stop"
+                  string="Tasks"
+                  colors="#32CD32:even_tipo == 1;#f4b642:even_tipo==2;#f4b642:even_tipo==3;"
+                  default_group_by="even_professionista_id">
+          <field name="even_display_interval"/>
+          <templates>
+            <div t-name="timeline-item">
+              <span t-esc="record.even_display_interval"/>
+            </div>
+          </templates>
+        </timeline>
+      </field>
+  </record>
+
+
+
+
+  <!--_____________________________________________________________________________FBA.EVENTOAMBULATORIO -->
+
+  <!-- Eventi ambulatorio Form -->
+  <record id="eventiambulatorio_form_view" model="ir.ui.view">
+    <field name="name">eventiambulatorio.form</field>
+    <field name="model">fba.eventoambulatorio</field>
+    <field name="arch" type="xml">
+      <form string="Eventi ambulatorio form">
+        <sheet>
+          <group>
+            <field name="eventoambulatorio_tipo"/>
+            <field name="eventoambulatorio_start"/>
+            <field name="eventoambulatorio_stop"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!--Eventi ambulatorio calendar -->
+  <record id="view_calendar_eventiambulatorio" model="ir.ui.view">
+    <field name="name">eventiambulatorio.calendar</field>
+    <field name="model">fba.eventoambulatorio</field>
+    <field name="priority" eval="2"/>
+    <field name="arch" type="xml">
+      <calendar string="Eventi Ambulatorio" date_start="eventoambulatorio_start" date_stop="eventoambulatorio_stop" date_delay="eventoambulatorio_duration" all_day="eventoambulatorio_allday">
+        <field name="name"/>
+        <field name="eventoambulatorio_ambulatorio_id" />
+      </calendar>
+    </field>
+  </record>
+
+  <!--Eventi ambulatorio timeline -->
+  <record id="view_timeline_eventiambulatorio" model="ir.ui.view">
+    <field name="name">eventiambulatorio.timeline</field>
+    <field name="model">fba.eventoambulatorio</field>
+    <field name="priority" eval="2"/>
+    <field name="arch" type="xml">
+      <timeline date_start="eventoambulatorio_start"
+                date_stop="eventoambulatorio_stop"
+                string="Tasks"
+                colors="#32CD32:eventoambulatorio_tipo == 1;"
+                default_group_by="eventoambulatorio_ambulatorio_id">
+        <field name="eventoambulatorio_display_interval"/>
+        <templates>
+          <div t-name="timeline-item">
+            <span t-esc="record.eventoambulatorio_display_interval"/>
+          </div>
+        </templates>
+      </timeline>
+    </field>
+  </record>
+
+
+
+
+
+<!--_____________________________________________________________________________FBA.SEDE -->
+
+  <!-- Form -->
+  <record id="view_form_fba_sede" model="ir.ui.view">
+    <field name="model">fba.sede</field>
+    <field name="arch" type="xml">
+      <form>
+        <header>      
+        </header>
+        <sheet>
+          <group>
+            <field name="name" string="Nome sede"/>
+            <field name="sede_ambulatori_ids" string="Ambulatori"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!-- Tree -->
+  <record id="view_tree_sede" model="ir.ui.view">
+    <field name="model">fba.sede</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="name" string="Nome sede"/> 
+      </tree>
+    </field>
+  </record>
+
+  <!-- Filter -->
+  <record id="view_filter_sede" model="ir.ui.view">
+    <field name="model">fba.sede</field>
+    <field name="arch" type="xml">
+      <search>
+        <field name="name"/>  
+      </search>
+    </field>
+  </record>
+
+
+
+
+<!--_____________________________________________________________________________FBA.AMBULATORIO -->
+
+  <!-- Form -->
+  <record id="view_form_fba_ambulatorio" model="ir.ui.view">
+    <field name="model">fba.ambulatorio</field>
+    <field name="arch" type="xml">
+      <form>
+        <header>      
+        </header>
+        <sheet>
+          <group>
+            <field name="name" string="Nome ambulatorio"/>
+          </group>
+          <group>
+            <notebook>
+              <page string="Orario di apertura" name="Pagina orari">
+                <field name="ambu_calendariambulatorio_ids" />
+              </page>
+            </notebook>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!-- Tree -->
+  <record id="view_tree_ambulatorio" model="ir.ui.view">
+    <field name="model">fba.ambulatorio</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="name" string="Nome ambulatorio"/>  
+      </tree>
+    </field>
+  </record>
+
+  <!-- Filter -->
+  <record id="view_filter_ambulatorio" model="ir.ui.view">
+    <field name="model">fba.ambulatorio</field>
+    <field name="arch" type="xml">
+      <search>
+        <field name="name"/>  
+      </search>
+    </field>
+  </record>
+
+
+
+
+</odoo>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <!--_____________________________________________________________________________FBA.APPUNTAMENTO -->
+
+  <!-- Appuntamento Form -->
+  <record model="ir.ui.view" id="apuntamento_form_view">
+    <field name="name">appuntamento.form</field>
+    <field name="model">fba.appuntamento</field>
+    <field name="arch" type="xml">
+      <form string="Appuntamento form">
+        <sheet>
+          <group>
+            <field name="appuntamento_descrizione"/>
+            <field name="appuntamento_start"/>
+            <field name="appuntamento_stop"/>
+          </group>
+          <group>
+            <notebook>
+              <page string="Professionisti">
+                <field name="appuntamento_professionisti_ids" string="Nome"/>
+              </page>
+            </notebook>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <!--Appuntamento Calendar -->
+  <record id="view_calendar_appuntamento" model="ir.ui.view">
+    <field name="name">appuntamento.calendar</field>
+    <field name="model">fba.appuntamento</field>
+    <field name="priority" eval="2"/>
+    <field name="arch" type="xml">
+      <calendar string="Appuntamento" date_start="appuntamento_start" date_stop="appuntamento_stop" date_delay="appuntamento_duration" all_day="appuntamento_allday">
+        <field name="appuntamento_descrizione"/>
+      </calendar>
+    </field>
+  </record>
+
+  <!--Appuntamento tree -->
+  <record model="ir.ui.view" id="appuntamento_tree">
+    <field name="name">appuntamento.tree</field>
+    <field name="model">fba.appuntamento</field>
+    <field name="arch" type="xml">
+      <tree string="Appuntamenti">
+        <field name="appuntamento_descrizione"/>
+        <field name="appuntamento_start"/>
+        <field name="appuntamento_stop"/>
+      </tree>
+    </field>
+  </record>
+
+</odoo>
