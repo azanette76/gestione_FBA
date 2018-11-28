@@ -386,54 +386,38 @@
 
 <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////PAZIENTI//////////////////////////////// -->
 
-        <record id="fba_demodata_paziente_PILLOT" model="fba.paziente">
-            <field name="name">PILLOT GABRIELE</field>
-            <field name="paz_cf">PLLGRLOOC16G888N</field>
+        <record id="fba_demodata_paziente_MERDA" model="fba.paziente">
+        	<field name="image" type="base64" file="gestione_fba/static/icons-demodata/merda.jpg"/>
+            <field name="name">MERDA GIANNI</field>
+            <field name="paz_cf">MRDGNN00000001888</field>
             <field name="paz_gravita_id" ref="fba_demodata_gravita_TRANQ"/>
             <field name="paz_azienda_id" ref="fba_demodata_azienda_AAS5"/>
             <field name="paz_distretto_id" ref="fba_demodata_distretto_AAS5_URBANO"/>            
         </record>
-        <record id="fba_demodata_paziente_LONGO" model="fba.paziente">
-            <field name="image" type="base64" file="gestione_fba/static/icons-demodata/longo.jpg"/>
-            <field name="name">LONGO ELIA</field>
-            <field name="paz_cf">LNGLEI02D05G888F</field>
+        <record id="fba_demodata_paziente_CULONIO" model="fba.paziente">
+            <field name="image" type="base64" file="gestione_fba/static/icons-demodata/culonio.jpg"/>
+            <field name="name">CULONIO CARCARLO</field>
+            <field name="paz_cf">CLNCRCR00000001888</field>
             <field name="paz_gravita_id" ref="fba_demodata_gravita_GRAVE"/>
             <field name="paz_azienda_id" ref="fba_demodata_azienda_AAS5"/>
             <field name="paz_distretto_id" ref="fba_demodata_distretto_AAS5_URBANO"/>            
         </record>
-        <record id="fba_demodata_paziente_HOXHA" model="fba.paziente">
-            <field name="name">HOXHA ANDREA</field>
-            <field name="paz_cf">HXHNDR04C03G888H</field>
+        <record id="fba_demodata_paziente_ASPERGER" model="fba.paziente">
+        	<field name="image" type="base64" file="gestione_fba/static/icons-demodata/asperger.jpg"/>
+            <field name="name">ASPERGER TOMMASO</field>
+            <field name="paz_cf">ASPTMSN00000001888</field>
             <field name="paz_gravita_id" ref="fba_demodata_gravita_MEDIO"/>
             <field name="paz_azienda_id" ref="fba_demodata_azienda_AAS5"/>
             <field name="paz_distretto_id" ref="fba_demodata_distretto_AAS5_URBANO"/>            
         </record>
-        <record id="fba_demodata_paziente_ZUCCHET" model="fba.paziente">
-            <field name="image" type="base64" file="gestione_fba/static/icons-demodata/zucchet.jpg"/>
-            <field name="name">ZUCCHET ENRICO</field>
-            <field name="paz_cf">ZCCNRC92M01G888Q</field>
+        <record id="fba_demodata_paziente_PALLINO" model="fba.paziente">
+            <field name="image" type="base64" file="gestione_fba/static/icons-demodata/pallino.jpg"/>
+            <field name="name">PALLINO PINCO STRONZO</field>
+            <field name="paz_cf">MLNPNCSTR000001888</field>
             <field name="paz_gravita_id" ref="fba_demodata_gravita_TRANQ"/>
             <field name="paz_azienda_id" ref="fba_demodata_azienda_AAS5"/>
             <field name="paz_distretto_id" ref="fba_demodata_distretto_AAS5_SUD"/>            
         </record>
-        <record id="fba_demodata_paziente_ADNAN" model="fba.paziente">
-            <field name="image" type="base64" file="gestione_fba/static/icons-demodata/ljubovic.jpg"/>
-            <field name="name">LJUBOVIC ADNAN</field>
-            <field name="paz_cf">LJBDNN88C13Z153W</field>
-            <field name="paz_gravita_id" ref="fba_demodata_gravita_MEDIO"/>
-            <field name="paz_azienda_id" ref="fba_demodata_azienda_ASUIUD"/>
-            <field name="paz_distretto_id" ref="fba_demodata_distretto_ASUIUD_UDINE"/>            
-        </record>
-        <record id="fba_demodata_paziente_ROGER" model="fba.paziente">
-            <field name="image" type="base64" file="gestione_fba/static/icons-demodata/roger.jpg"/>
-            <field name="name">MUNOZ SANCHEZ ROGER</field>
-            <field name="paz_cf">MNZRGR89C03Z604K</field>
-            <field name="paz_gravita_id" ref="fba_demodata_gravita_GRAVE"/>
-            <field name="paz_azienda_id" ref="fba_demodata_azienda_ASUIUD"/>
-            <field name="paz_distretto_id" ref="fba_demodata_distretto_ASUIUD_UDINE"/>            
-        </record>
-
-
 
 
 
@@ -441,69 +425,69 @@
 
 <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////OPERATORIPREFERENZIALI//////////////////////////////// -->
 
-        <record id="fba_demodata_oppref_Pillot_Brocca_AMB1" model="fba.operatorepreferenziale">
-            <field name="operpref_paziente_id" ref="fba_demodata_paziente_PILLOT"/>
+        <record id="fba_demodata_oppref_Merda_Brocca_AMB1" model="fba.operatorepreferenziale">
+            <field name="operpref_paziente_id" ref="fba_demodata_paziente_MERDA"/>
             <field name="operpref_professionista_id" ref="fba_demodata_professionista_Brocca"/>
             <field name="operpref_anagraficaprestazione_id" ref="fba_demodata_anaprest_AM"/>
         </record>
-        <record id="fba_demodata_oppref_Pillot_Cassin_PT" model="fba.operatorepreferenziale">
-            <field name="operpref_paziente_id" ref="fba_demodata_paziente_PILLOT"/>
+        <record id="fba_demodata_oppref_Merda_Cassin_PT" model="fba.operatorepreferenziale">
+            <field name="operpref_paziente_id" ref="fba_demodata_paziente_MERDA"/>
             <field name="operpref_professionista_id" ref="fba_demodata_professionista_Cassin"/>
             <field name="operpref_anagraficaprestazione_id" ref="fba_demodata_anaprest_PT"/>
         </record>
-        <record id="fba_demodata_oppref_Pillot_Brocca_COLLEST" model="fba.operatorepreferenziale">
-            <field name="operpref_paziente_id" ref="fba_demodata_paziente_PILLOT"/>
+        <record id="fba_demodata_oppref_Merda_Brocca_COLLEST" model="fba.operatorepreferenziale">
+            <field name="operpref_paziente_id" ref="fba_demodata_paziente_MERDA"/>
             <field name="operpref_professionista_id" ref="fba_demodata_professionista_Brocca"/>
             <field name="operpref_anagraficaprestazione_id" ref="fba_demodata_anaprest_COLLEST"/>
         </record>
 
 
-        <record id="fba_demodata_oppref_Longo_Ateri_AMB1" model="fba.operatorepreferenziale">
-            <field name="operpref_paziente_id" ref="fba_demodata_paziente_LONGO"/>
+        <record id="fba_demodata_oppref_Culonio_Ateri_AMB1" model="fba.operatorepreferenziale">
+            <field name="operpref_paziente_id" ref="fba_demodata_paziente_CULONIO"/>
             <field name="operpref_professionista_id" ref="fba_demodata_professionista_Ateri"/>
             <field name="operpref_anagraficaprestazione_id" ref="fba_demodata_anaprest_AM"/>
         </record>
-        <record id="fba_demodata_oppref_Longo_Cassin_PT" model="fba.operatorepreferenziale">
-            <field name="operpref_paziente_id" ref="fba_demodata_paziente_LONGO"/>
+        <record id="fba_demodata_oppref_Culonio_Cassin_PT" model="fba.operatorepreferenziale">
+            <field name="operpref_paziente_id" ref="fba_demodata_paziente_CULONIO"/>
             <field name="operpref_professionista_id" ref="fba_demodata_professionista_Cassin"/>
             <field name="operpref_anagraficaprestazione_id" ref="fba_demodata_anaprest_PT"/>
         </record>
-        <record id="fba_demodata_oppref_Longo_Milan_COLLEST" model="fba.operatorepreferenziale">
-            <field name="operpref_paziente_id" ref="fba_demodata_paziente_LONGO"/>
+        <record id="fba_demodata_oppref_Culonio_Milan_COLLEST" model="fba.operatorepreferenziale">
+            <field name="operpref_paziente_id" ref="fba_demodata_paziente_CULONIO"/>
             <field name="operpref_professionista_id" ref="fba_demodata_professionista_Milan"/>
             <field name="operpref_anagraficaprestazione_id" ref="fba_demodata_anaprest_COLLEST"/>
         </record>
 
 
-        <record id="fba_demodata_oppref_Hoxha_Ateri_AMB1" model="fba.operatorepreferenziale">
-            <field name="operpref_paziente_id" ref="fba_demodata_paziente_HOXHA"/>
+        <record id="fba_demodata_oppref_Asperger_Ateri_AMB1" model="fba.operatorepreferenziale">
+            <field name="operpref_paziente_id" ref="fba_demodata_paziente_ASPERGER"/>
             <field name="operpref_professionista_id" ref="fba_demodata_professionista_Ateri"/>
             <field name="operpref_anagraficaprestazione_id" ref="fba_demodata_anaprest_AM"/>
         </record>
-        <record id="fba_demodata_oppref_Hoxha_Cassin_PT" model="fba.operatorepreferenziale">
-            <field name="operpref_paziente_id" ref="fba_demodata_paziente_HOXHA"/>
+        <record id="fba_demodata_oppref_Asperger_Cassin_PT" model="fba.operatorepreferenziale">
+            <field name="operpref_paziente_id" ref="fba_demodata_paziente_ASPERGER"/>
             <field name="operpref_professionista_id" ref="fba_demodata_professionista_Cassin"/>
             <field name="operpref_anagraficaprestazione_id" ref="fba_demodata_anaprest_PT"/>
         </record>
-        <record id="fba_demodata_oppref_Hoxha_Milan_COLLEST" model="fba.operatorepreferenziale">
-            <field name="operpref_paziente_id" ref="fba_demodata_paziente_HOXHA"/>
+        <record id="fba_demodata_oppref_Asperger_Milan_COLLEST" model="fba.operatorepreferenziale">
+            <field name="operpref_paziente_id" ref="fba_demodata_paziente_ASPERGER"/>
             <field name="operpref_professionista_id" ref="fba_demodata_professionista_Milan"/>
             <field name="operpref_anagraficaprestazione_id" ref="fba_demodata_anaprest_COLLEST"/>
         </record>
 
 
-        <record id="fba_demodata_oppref_Zucchet_Giacuzzo_AMB1" model="fba.operatorepreferenziale">
-            <field name="operpref_paziente_id" ref="fba_demodata_paziente_ZUCCHET"/>
+        <record id="fba_demodata_oppref_Pallino_Giacuzzo_AMB1" model="fba.operatorepreferenziale">
+            <field name="operpref_paziente_id" ref="fba_demodata_paziente_PALLINO"/>
             <field name="operpref_professionista_id" ref="fba_demodata_professionista_Giacuzzo"/>
             <field name="operpref_anagraficaprestazione_id" ref="fba_demodata_anaprest_AM"/>
         </record>
-        <record id="fba_demodata_oppref_Zucchet_Cassin_PT" model="fba.operatorepreferenziale">
-            <field name="operpref_paziente_id" ref="fba_demodata_paziente_ZUCCHET"/>
+        <record id="fba_demodata_oppref_Pallino_Cassin_PT" model="fba.operatorepreferenziale">
+            <field name="operpref_paziente_id" ref="fba_demodata_paziente_PALLINO"/>
             <field name="operpref_professionista_id" ref="fba_demodata_professionista_Cassin"/>
             <field name="operpref_anagraficaprestazione_id" ref="fba_demodata_anaprest_PT"/>
         </record>
-        <record id="fba_demodata_oppref_Zucchet_Milan_COLLEST" model="fba.operatorepreferenziale">
-            <field name="operpref_paziente_id" ref="fba_demodata_paziente_ZUCCHET"/>
+        <record id="fba_demodata_oppref_Pallino_Milan_COLLEST" model="fba.operatorepreferenziale">
+            <field name="operpref_paziente_id" ref="fba_demodata_paziente_PALLINO"/>
             <field name="operpref_professionista_id" ref="fba_demodata_professionista_Milan"/>
             <field name="operpref_anagraficaprestazione_id" ref="fba_demodata_anaprest_COLLEST"/>
         </record>
