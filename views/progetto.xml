@@ -87,7 +87,7 @@
 						<field name="prest_descrizione" string="Descrizione"/>
 						<field name="prest_note" string="Note"/>
 
-						<field name="prest_n_appuntamenti" string="Ricorrenze previste"/>
+						<field name="prest_n_ripetizioni" string="Ricorrenze previste"/>
 						<field name="prest_specifiche_autorizzate" string="Interventi specifici autorizzati"/>
 						<field name="prest_n_pianificate" string="Interventi pianificati" readonly="1"/>
 						<field name="prest_n_dapianificare" string="Interventi da pianificare"/>

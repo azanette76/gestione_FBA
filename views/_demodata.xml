@@ -262,7 +262,7 @@
             <field name="anaprest_servizio_id" ref="fba_demodata_servizio_DIAGNOSTICO"/>
             <field name="anaprest_ambulatori_ids" eval="[(6, 0, [ref('fba_demodata_ambulatorio_VESPUCCI_AMBMED0'), ref('fba_demodata_ambulatorio_VESPUCCI_AMBMED1')])]"/>
         </record>
-        <record id="fba_demodata_anaprest_VISITANEURO" model="fba.anagraficaprestazione">
+        <record id="fba_demodata_anaprest_VISITANEURO_DIAGN" model="fba.anagraficaprestazione">
             <field name="name">VISITA NEUROPSICHIATRICA</field>
             <field name="anaprest_durata" eval="2"/>
             <field name="anaprest_interventi" eval="3"/>
@@ -300,7 +300,7 @@
             <field name="anaprest_n_professionisti" eval="1"/>
             <field name="anaprest_servizio_id" ref="fba_demodata_servizio_RIAB"/>
         </record>
-        <record id="fba_demodata_anaprest_VISITANEURO" model="fba.anagraficaprestazione">
+        <record id="fba_demodata_anaprest_VISITANEURO_RIAB" model="fba.anagraficaprestazione">
             <field name="name">VISITA NEUROPSICHIATRICA</field>
             <field name="anaprest_durata" eval="2"/>
             <field name="anaprest_interventi" eval="3"/>
@@ -362,7 +362,7 @@
             <field name="image" type="base64" file="gestione_fba/static/icons-demodata/ceschia.jpg"/>
             <field name="name">CESCHIA RACHELE</field>
             <field name="profess_cf">CSCRHL79D60D962S</field>
-            <field name="profess_anagraficaprestazioni_ids" eval="[(6, 0, [ref('fba_demodata_anaprest_VISITANEURO')])]"/>
+            <field name="profess_anagraficaprestazioni_ids" eval="[(6, 0, [ref('fba_demodata_anaprest_VISITANEURO_DIAGN'), ref('fba_demodata_anaprest_VISITANEURO_RIAB')])]"/>
         </record>
         <record id="fba_demodata_professionista_Cassin" model="fba.professionista">
             <field name="image" type="base64" file="gestione_fba/static/icons-demodata/cassin.jpg"/>
@@ -493,11 +493,261 @@
         </record>
 
 
+
+
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////PROGETTI//////////////////////////////// -->
+     
+    <record id="fba_demodata_progetto_1aVAL_Merda" model="fba.progetto">
+        <field name="name">1a Valutazione</field>
+        <field name="prog_paziente_id" ref="fba_demodata_paziente_MERDA"/>   
+        <field name="prog_interventi_generici_autorizzati" eval="30"/>
+    </record>
+    <record id="fba_demodata_progetto_1aVAL_Culonio" model="fba.progetto">
+        <field name="name">Follow Up</field>
+        <field name="prog_paziente_id" ref="fba_demodata_paziente_CULONIO"/>   
+        <field name="prog_interventi_generici_autorizzati" eval="15"/>
+    </record>
+    <record id="fba_demodata_progetto_RIAB_Asperger" model="fba.progetto">
+        <field name="name">Piano Riabilitativo 2019</field>
+        <field name="prog_paziente_id" ref="fba_demodata_paziente_ASPERGER"/>   
+        <field name="prog_interventi_generici_autorizzati" eval="220"/>
+    </record>
+    <record id="fba_demodata_progetto_RIAB_Pallino" model="fba.progetto">
+        <field name="name">Piano Riabilitativo 2019</field>
+        <field name="prog_paziente_id" ref="fba_demodata_paziente_PALLINO"/>   
+        <field name="prog_interventi_generici_autorizzati" eval="450"/>
+    </record>
+
+
+
+
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////PRESTAZIONE//////////////////////////////// -->
+     
+     <record id="fba_demodata_prest_ADOS_merda" model="fba.prestazione">
+        <field name="prest_progetto_id" ref="fba_demodata_progetto_1aVAL_Merda"/> 
+        <field name="prest_anagraficaprestazione_id" ref="fba_demodata_anaprest_ADOS"/>                 
+    </record>
+    <record id="fba_demodata_prest_ADIR_merda" model="fba.prestazione">
+        <field name="prest_progetto_id" ref="fba_demodata_progetto_1aVAL_Merda"/> 
+        <field name="prest_anagraficaprestazione_id" ref="fba_demodata_anaprest_ADIR"/>                 
+    </record>
+    <record id="fba_demodata_prest_VALLOGO_merda" model="fba.prestazione">
+        <field name="prest_progetto_id" ref="fba_demodata_progetto_1aVAL_Merda"/> 
+        <field name="prest_anagraficaprestazione_id" ref="fba_demodata_anaprest_VALLOGO"/>                 
+    </record>
+    <record id="fba_demodata_prest_VALCOGN_merda" model="fba.prestazione">
+        <field name="prest_progetto_id" ref="fba_demodata_progetto_1aVAL_Merda"/> 
+        <field name="prest_anagraficaprestazione_id" ref="fba_demodata_anaprest_VALCOGN"/>                 
+    </record>
+    <record id="fba_demodata_prest_VISITANEURODIAGN_merda" model="fba.prestazione">
+        <field name="prest_progetto_id" ref="fba_demodata_progetto_1aVAL_Merda"/> 
+        <field name="prest_anagraficaprestazione_id" ref="fba_demodata_anaprest_VISITANEURO_DIAGN"/>                 
+    </record>
+
+
+    <record id="fba_demodata_prest_ADOS_culonio" model="fba.prestazione">
+        <field name="prest_progetto_id" ref="fba_demodata_progetto_1aVAL_Culonio"/> 
+        <field name="prest_anagraficaprestazione_id" ref="fba_demodata_anaprest_ADOS"/>                 
+    </record>
+    <record id="fba_demodata_prest_ADIR_culonio" model="fba.prestazione">
+        <field name="prest_progetto_id" ref="fba_demodata_progetto_1aVAL_Culonio"/> 
+        <field name="prest_anagraficaprestazione_id" ref="fba_demodata_anaprest_ADIR"/>                 
+    </record>
+
+
+    <record id="fba_demodata_prest_AM_asperger" model="fba.prestazione">
+        <field name="prest_progetto_id" ref="fba_demodata_progetto_RIAB_Asperger"/> 
+        <field name="prest_anagraficaprestazione_id" ref="fba_demodata_anaprest_AM"/> 
+        <field name="prest_n_ripetizioni" eval="200"/>              
+    </record>
+    <record id="fba_demodata_prest_PT_asperger" model="fba.prestazione">
+        <field name="prest_progetto_id" ref="fba_demodata_progetto_RIAB_Asperger"/> 
+        <field name="prest_anagraficaprestazione_id" ref="fba_demodata_anaprest_PT"/> 
+        <field name="prest_n_ripetizioni" eval="20"/>              
+    </record>
+
+
+    <record id="fba_demodata_prest_AM_pallino" model="fba.prestazione">
+        <field name="prest_progetto_id" ref="fba_demodata_progetto_RIAB_Pallino"/> 
+        <field name="prest_anagraficaprestazione_id" ref="fba_demodata_anaprest_AM"/> 
+        <field name="prest_n_ripetizioni" eval="400"/>              
+    </record>
+    <record id="fba_demodata_prest_PT_pallino" model="fba.prestazione">
+        <field name="prest_progetto_id" ref="fba_demodata_progetto_RIAB_Pallino"/> 
+        <field name="prest_anagraficaprestazione_id" ref="fba_demodata_anaprest_PT"/> 
+        <field name="prest_n_ripetizioni" eval="20"/>              
+    </record>
+    <record id="fba_demodata_prest_COLLINT_pallino" model="fba.prestazione">
+        <field name="prest_progetto_id" ref="fba_demodata_progetto_RIAB_Pallino"/> 
+        <field name="prest_anagraficaprestazione_id" ref="fba_demodata_anaprest_COLLINT"/> 
+        <field name="prest_n_ripetizioni" eval="10"/>              
+    </record>
+    <record id="fba_demodata_prest_COLLEST_pallino" model="fba.prestazione">
+        <field name="prest_progetto_id" ref="fba_demodata_progetto_RIAB_Pallino"/> 
+        <field name="prest_anagraficaprestazione_id" ref="fba_demodata_anaprest_COLLEST"/> 
+        <field name="prest_n_ripetizioni" eval="20"/>              
+    </record>
+
+
+
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////CALENDARI//////////////////////////////// -->
+     
+     <record id="fba_demodata_calendario_fulltimeRiab" model="fba.calendario">
+        <field name="name">Full Time Riab (40 ore)</field> 
+        <field name="cal_tipo" eval="2"/>                 
+    </record>
+    <record id="fba_demodata_calendario_parttimeRiab" model="fba.calendario">
+        <field name="name">Full Time Riab (20 ore)</field> 
+        <field name="cal_tipo" eval="2"/>                 
+    </record>
+
+
+
+
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////CALENDARIOFASCE//////////////////////////////// -->
+     
+     <record id="fba_demodata_calendario_fulltimeRiab_lunedi" model="fba.calendariofascia">
+        <field name="calfas_calendario_id" ref="fba_demodata_calendario_fulltimeRiab"/>  
+        <field name="name">Lunedì</field> 
+        <field name="calfas_giorno" eval="1"/>   
+        <field name="calfas_from" eval="8.5"/> 
+        <field name="calfas_to" eval="18.5"/> 
+        <field name="calfas_dataInizio">2018-11-01</field> 
+        <field name="calfas_dataFine">2019-12-31</field>                
+    </record>
+    <record id="fba_demodata_calendario_fulltimeRiab_Martedi" model="fba.calendariofascia">
+        <field name="calfas_calendario_id" ref="fba_demodata_calendario_fulltimeRiab"/>  
+        <field name="name">Martedi</field> 
+        <field name="calfas_giorno" eval="2"/>   
+        <field name="calfas_from" eval="8.5"/> 
+        <field name="calfas_to" eval="18.5"/> 
+        <field name="calfas_dataInizio">2018-11-01</field> 
+        <field name="calfas_dataFine">2019-12-31</field>                
+    </record>
+    <record id="fba_demodata_calendario_fulltimeRiab_Mercoledi" model="fba.calendariofascia">
+        <field name="calfas_calendario_id" ref="fba_demodata_calendario_fulltimeRiab"/>  
+        <field name="name">Mercoledi</field> 
+        <field name="calfas_giorno" eval="3"/>   
+        <field name="calfas_from" eval="8.5"/> 
+        <field name="calfas_to" eval="18.5"/> 
+        <field name="calfas_dataInizio">2018-11-01</field> 
+        <field name="calfas_dataFine">2019-12-31</field>                
+    </record>
+    <record id="fba_demodata_calendario_fulltimeRiab_Giovedi" model="fba.calendariofascia">
+        <field name="calfas_calendario_id" ref="fba_demodata_calendario_fulltimeRiab"/>  
+        <field name="name">Giovedi</field> 
+        <field name="calfas_giorno" eval="4"/>   
+        <field name="calfas_from" eval="8.5"/> 
+        <field name="calfas_to" eval="18.5"/> 
+        <field name="calfas_dataInizio">2018-11-01</field> 
+        <field name="calfas_dataFine">2019-12-31</field>                
+    </record>
+    <record id="fba_demodata_calendario_fulltimeRiab_Venerdi" model="fba.calendariofascia">
+        <field name="calfas_calendario_id" ref="fba_demodata_calendario_fulltimeRiab"/>  
+        <field name="name">Venerdi</field> 
+        <field name="calfas_giorno" eval="5"/>   
+        <field name="calfas_from" eval="8.5"/> 
+        <field name="calfas_to" eval="18.5"/> 
+        <field name="calfas_dataInizio">2018-11-01</field> 
+        <field name="calfas_dataFine">2019-12-31</field>                
+    </record>
+
+
+
+
+
+    <record id="fba_demodata_calendario_parttimeRiab_lunedi" model="fba.calendariofascia">
+        <field name="calfas_calendario_id" ref="fba_demodata_calendario_parttimeRiab"/>  
+        <field name="name">Lunedì</field> 
+        <field name="calfas_giorno" eval="1"/>   
+        <field name="calfas_from" eval="9.0"/> 
+        <field name="calfas_to" eval="14.0"/> 
+        <field name="calfas_dataInizio">2018-11-01</field> 
+        <field name="calfas_dataFine">2019-12-31</field>                
+    </record>
+    <record id="fba_demodata_calendario_parttimeRiab_Martedi" model="fba.calendariofascia">
+        <field name="calfas_calendario_id" ref="fba_demodata_calendario_parttimeRiab"/>  
+        <field name="name">Martedi</field> 
+        <field name="calfas_giorno" eval="2"/>   
+           <field name="calfas_from" eval="9.0"/> 
+        <field name="calfas_to" eval="14.0"/> 
+        <field name="calfas_dataInizio">2018-11-01</field> 
+        <field name="calfas_dataFine">2019-12-31</field>                
+    </record>
+    <record id="fba_demodata_calendario_parttimeRiab_Mercoledi" model="fba.calendariofascia">
+        <field name="calfas_calendario_id" ref="fba_demodata_calendario_parttimeRiab"/>  
+        <field name="name">Mercoledi</field> 
+        <field name="calfas_giorno" eval="3"/>   
+         <field name="calfas_from" eval="9.0"/> 
+        <field name="calfas_to" eval="14.0"/> 
+        <field name="calfas_dataInizio">2018-11-01</field> 
+        <field name="calfas_dataFine">2019-12-31</field>                
+    </record>
+    <record id="fba_demodata_calendario_parttimeRiab_Giovedi" model="fba.calendariofascia">
+        <field name="calfas_calendario_id" ref="fba_demodata_calendario_parttimeRiab"/>  
+        <field name="name">Giovedi</field> 
+        <field name="calfas_giorno" eval="4"/>   
+         <field name="calfas_from" eval="9.0"/> 
+        <field name="calfas_to" eval="14.0"/>  
+        <field name="calfas_dataInizio">2018-11-01</field> 
+        <field name="calfas_dataFine">2019-12-31</field>                
+    </record>
+
+
+
+
+<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////CALENDARIPROFESSIONISTI//////////////////////////////// -->
+    <record id="fba_demodata_calendario_fulltimeRiab_Milan" model="fba.calendarioprofessionista">
+        <field name="calprofess_professionista_id" ref="fba_demodata_professionista_Milan"/>  
+        <field name="calprofess_calendario_id" ref="fba_demodata_calendario_fulltimeRiab"/>  
+        <field name="calprofess_dataInizioValidita">2018-11-01</field> 
+        <field name="calprofess_dataFineValidita">2019-12-31</field>                
+    </record>
+    <record id="fba_demodata_calendario_fulltimeRiab_Brocca" model="fba.calendarioprofessionista">
+        <field name="calprofess_professionista_id" ref="fba_demodata_professionista_Brocca"/>  
+        <field name="calprofess_calendario_id" ref="fba_demodata_calendario_fulltimeRiab"/>  
+        <field name="calprofess_dataInizioValidita">2018-11-01</field> 
+        <field name="calprofess_dataFineValidita">2019-12-31</field>                
+    </record>
+     <record id="fba_demodata_calendario_fulltimeRiab_Ateri" model="fba.calendarioprofessionista">
+        <field name="calprofess_professionista_id" ref="fba_demodata_professionista_Ateri"/>  
+        <field name="calprofess_calendario_id" ref="fba_demodata_calendario_fulltimeRiab"/>  
+        <field name="calprofess_dataInizioValidita">2018-11-01</field> 
+        <field name="calprofess_dataFineValidita">2019-12-31</field>                
+    </record>
+     <record id="fba_demodata_calendario_fulltimeRiab_Cassin" model="fba.calendarioprofessionista">
+        <field name="calprofess_professionista_id" ref="fba_demodata_professionista_Cassin"/>  
+        <field name="calprofess_calendario_id" ref="fba_demodata_calendario_fulltimeRiab"/>  
+        <field name="calprofess_dataInizioValidita">2018-11-01</field> 
+        <field name="calprofess_dataFineValidita">2019-12-31</field>                
+    </record>
+    <record id="fba_demodata_calendario_fulltimeRiab_Sedran" model="fba.calendarioprofessionista">
+        <field name="calprofess_professionista_id" ref="fba_demodata_professionista_Sedran"/>  
+        <field name="calprofess_calendario_id" ref="fba_demodata_calendario_fulltimeRiab"/>  
+        <field name="calprofess_dataInizioValidita">2018-11-01</field> 
+        <field name="calprofess_dataFineValidita">2019-12-31</field>                
+    </record>
+
+    <record id="fba_demodata_calendario_parttimeRiab_Giacuzzo" model="fba.calendarioprofessionista">
+        <field name="calprofess_professionista_id" ref="fba_demodata_professionista_Giacuzzo"/>  
+        <field name="calprofess_calendario_id" ref="fba_demodata_calendario_parttimeRiab"/>  
+        <field name="calprofess_dataInizioValidita">2018-11-01</field> 
+        <field name="calprofess_dataFineValidita">2019-12-31</field>                
+    </record>
+    <record id="fba_demodata_calendario_parttimeRiab_Ceschia" model="fba.calendarioprofessionista">
+        <field name="calprofess_professionista_id" ref="fba_demodata_professionista_Ceschia"/>  
+        <field name="calprofess_calendario_id" ref="fba_demodata_calendario_parttimeRiab"/>  
+        <field name="calprofess_dataInizioValidita">2018-11-01</field> 
+        <field name="calprofess_dataFineValidita">2019-12-31</field>                
+    </record>
+
+
     </data>
 </odoo>
 
 
-
+ 
+     
 
 <!--
 

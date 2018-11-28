@@ -38,7 +38,7 @@ class CalendarioFascia(models.Model):
     #campi di sistema
     _name = 'fba.calendariofascia'
     _rec_name = 'name'
-    _order = 'name ASC'
+    _order = 'calfas_giorno ASC'
 
 
     #campi di relazione

@@ -248,7 +248,7 @@ class prestazione(models.Model):
 	prest_descrizione = fields.Text()
 	prest_note = fields.Text()
 	
-	prest_n_appuntamenti = fields.Integer(help="Ciao crepa!")
+	prest_n_ripetizioni = fields.Integer(default=1, help="Ciao crepa!")
 	prest_n_interventi = fields.Integer(compute='_compute_prest_n_interventi', store=True)
 
 	prest_specifiche_autorizzate = fields.Integer()
@@ -275,15 +275,15 @@ class prestazione(models.Model):
 		for record in self :
 			record.prest_servizio_id = record.prest_anagraficaprestazione_id.anaprest_servizio_id
 
-	@api.depends('prest_n_appuntamenti', 'prest_n_pianificate')
+	@api.depends('prest_n_ripetizioni', 'prest_n_pianificate')
 	def _compute_prest_n_dapianificare(self):
 		for record in self :
-			record.prest_n_dapianificare = record.prest_n_appuntamenti - record.prest_n_pianificate
+			record.prest_n_dapianificare = record.prest_n_ripetizioni - record.prest_n_pianificate
 
-	@api.depends('prest_n_appuntamenti', 'prest_anagraficaprestazione_id.anaprest_interventi')
+	@api.depends('prest_n_ripetizioni', 'prest_anagraficaprestazione_id.anaprest_interventi')
 	def _compute_prest_n_interventi(self):
 		for record in self :
-			record.prest_n_interventi = record.prest_n_appuntamenti * record.prest_anagraficaprestazione_id.anaprest_interventi
+			record.prest_n_interventi = record.prest_n_ripetizioni * record.prest_anagraficaprestazione_id.anaprest_interventi
 
 
 
