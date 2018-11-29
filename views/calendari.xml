@@ -81,7 +81,7 @@
 
 
   <record model="ir.ui.view" id="calendarioAmbulatorio_form_view">
-    <field name="name">calendarioAmbulatorio.form</field>
+    <field name="name">calendarioambulatorio.form</field>
     <field name="model">fba.calendarioambulatorio</field>
     <field name="arch" type="xml">
       <form string="Form calendario per ambulatorio">

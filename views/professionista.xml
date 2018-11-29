@@ -30,7 +30,7 @@
 							</tree>
 						</field>	
                			<field name="profess_calendariprofessionista_ids" string="Calendari" />
-            			<field name="profess_anagraficaprestazioni_ids" widget="many2many" string="Prestazioni ablitate" >
+            			<field name="profess_anagraficaprestazioni_ids" string="Prestazioni ablitate" >
 							<tree>
 								<field name="name" string="Nome"/>
 							</tree>

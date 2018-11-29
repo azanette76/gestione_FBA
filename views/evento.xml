@@ -216,7 +216,7 @@
           </group>
             <group>
                 <field name="ambu_anagraficaprestazioni_ids" string="Prestazioni" widget="many2many"/>
-                <field name="ambu_calendariambulatorio_ids" string="Calendari" widget="many2many"/>            
+                <field name="ambu_calendariambulatorio_ids" string="Calendari"/>            
           </group>
         </sheet>
       </form>
